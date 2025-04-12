@@ -1,0 +1,117 @@
+.worksmaincontainer {
+    
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    flex-wrap: wrap;
+    color: #f1f1f1;
+  }
+  
+  @media screen and (max-width: 1600px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+  
+  .worksContainer {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+    width: 90vw;
+    margin: 3rem 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ffffff22;
+    box-shadow: 0 7px 20px 5px #00000088;
+    border-radius: 0.7rem;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    overflow: hidden;
+    transition: 0.5s all;
+  }
+  
+
+  @media screen and (max-width: 1600px) {
+    .worksContainer {
+      max-width: 28.75rem;
+      margin: 5rem 1rem;
+    }
+  }
+
+  .workContainer{
+    border: 1px solid #ffffff22;
+    box-shadow: 0 7px 20px 5px #00000088;
+    border-radius: 0.7rem;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    overflow: hidden;
+    transition: 0.5s all;
+  }
+  
+  .workDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 19rem;
+    height: 18.75rem;
+    width: 20rem;
+    padding: 1rem 1rem 0 1rem;
+    
+  }
+
+
+  
+  @media screen and (max-width: 1600px) {
+    .workDescription {
+      max-width: 28.75rem;
+      text-align: center;
+      width: auto;
+    }
+  }
+  
+  .descriptionH2 {
+    display: flex;
+    padding: 0 1.25em;
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .description {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+  }
+  
+  .workImage {
+    border-radius: 0.5rem;
+    max-width: fit-content;
+    height: 13rem;
+    object-fit: cover;
+    padding: 1.25rem;
+  }
+  
+  .repositoryBtn {
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0.5px 0.5px 23px 6px #2512d1bc;
+    text-shadow: 0.5px 0.5px 0.5px #000000;
+    border: 1px solid #31223d;
+    border-radius: 20px;
+    margin: 1.3rem 0 2rem 0;
+    padding: 0.5rem;
+    background: linear-gradient(to bottom, #360327, #1e24d0);
+  }
+  

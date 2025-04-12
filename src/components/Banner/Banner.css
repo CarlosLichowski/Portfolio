@@ -1,0 +1,180 @@
+
+.banner {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  min-height: 85vh;
+    padding: 0;
+    margin:  3rem ;
+    @media (max-width: 1400px) {
+      height: auto;
+      min-height: auto;
+      
+    }
+  }
+
+  .BannerContainer{
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 5rem;
+    margin-top: 100px; /* Midiendo el largo del navbar puedo asegurar  que empiece después del navbar poniendole un margin exactamente del largo del navbar */
+    @media (max-width: 1400px) {
+      grid-template-columns: 1fr;
+      height: auto;
+      justify-content: center;
+    }
+  }
+  .banner .tagline {
+    font-weight: 700;
+    letter-spacing: .8px;
+    padding: 8px 10px;
+   
+    color: #f5f5f5;
+    text-shadow: .5008px 1px 1px #dfdfdf;
+    text-shadow: .5008px -1px 1px #ffffff;
+    background: #004b7a;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .banner h1 {
+    font-size: 3.5rem;
+    font-family: "Open Sans", serif;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 1;
+    color: #dfdfdf;
+    margin-bottom: 20px;
+    display: block;
+    text-shadow: 2px 2px 2px rgba(73, 73, 73, 0.986);
+    @media (max-width: 1300px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .banner h3{
+    font-family: "Open Sans", serif;
+    font-size: 1.625rem;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 1;
+    margin-bottom: 1.5625rem;
+    display: block;
+    color: #dfdfdf;
+    text-shadow: 2px 2px 2px rgba(36, 36, 36, 0.986);
+    margin-bottom: 3rem;
+  }
+  .banner p {
+    color: #B8B8B8;
+    font-size: 1.425rem;
+    letter-spacing: .8px;
+    line-height: 1.5em;
+    width: 96%;
+
+  }
+  .banner button {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 5rem;
+    letter-spacing: .8px;
+    display: flex;
+    align-items: center;
+  }
+  .banner button img {
+    font-size: 25px;
+    margin-left: 10px;
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+    margin-top: 5rem;
+
+    
+  }
+  .banner button:hover img{
+    margin-top: 5rem;
+    margin-left: 25px;
+  }
+
+  .txt-rotate > .wrap {
+    border-right: 0.08em solid #666;
+  }
+
+
+
+  .BannerColumn1{
+    width: 620px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+
+    @media (max-width: 1400px) {
+      margin: 2rem 0 6rem 0;
+    }
+  } 
+
+  .BannerColumn1 h1{
+    margin-top: 1rem
+    
+  }
+
+  .BannerColumn1 p {
+    text-align: start;
+  }
+
+  .BannerColumn1 img {
+    @media (max-width: 1400px) {
+      width: 40%;
+    }
+  }
+.BannerColumn2 
+{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+   color: #004b7a;
+}
+
+
+
+
+
+
+
+ iframe {
+  width: 700px;
+  height: 415px;
+   
+  @media (max-width: 1300px) {
+    width: 500px;
+    height: 275px;  
+    
+  }
+
+  @media (max-width: 700px) {
+      width: 100%;
+      height: 200px;
+  }
+}
+
+.NavsocialIcons{
+  margin-top: 4rem;
+
+}
+
+.photoPerfil {
+  border-radius: 50%;
+  padding: 8px;
+  width: 180px; /* Adjust size as needed */
+  height: auto;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.801))
+}

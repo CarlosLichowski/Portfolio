@@ -1,0 +1,57 @@
+.SocialContainer{
+    display: flex;
+    flex-direction: column;
+    width: 2rem;
+    padding: 2rem;
+    position: fixed;
+    bottom: 0;
+}
+
+.NavSocialIconsContainer{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    @media (max-width:62.5rem) {
+      display: none;
+    }
+  }
+  
+  .NavSocialIconsContainerMobile{
+  
+    display: none;
+    
+    @media (max-width:62.5rem) {
+     display: block; 
+    }
+  }
+    
+  
+  .NavSocialIconsContainer a {
+    width: 42px;
+    height: 42px;
+    margin: .5rem 0;
+    background: rgba(217, 217, 217, 0.1);
+    display: flex; 
+    border-radius: 50%;
+    margin-right: 6px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: .0625rem solid  rgb(33, 55, 88);
+    
+  }
+  
+  .NavSocialIconsContainer a:hover{
+      background-color: #737373;
+  
+    }
+
+    .NavSocialIconsContainer a:hover::before{
+        transform: scale(1);
+    }   
+
+    .social-icon a:hover img {
+        filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+    }  

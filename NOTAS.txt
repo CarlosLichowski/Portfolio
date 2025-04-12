@@ -1,0 +1,83 @@
+No voy a usar Foto de Perfil, no suma mucho y no me gusta como queda
+
+I will Focus on my strenghs that its be calm and kinde
+
+El diseño que mas me gusto
+
+https://oakharborwebdesigns.com/
+
+PARALAX SCROLL TRANSITION
+
+https://www.youtube.com/watch?v=kmM6mqvnxcs
+
+https://www.youtube.com/watch?v=hjbxaYTMhy0
+
+OTHER TRANSITIONS THAT I CAN ACTUALLY USE
+
+https://www.youtube.com/watch?v=4yBxb5RQxPs
+
+TRANSITION FOR THE WORKS
+
+https://www.youtube.com/watch?v=T33NN_pPeNI&t=6s
+
+
+
+
+CSS
+La respuesta no es absoluta y depende del caso de uso:
+
+Para animaciones simples y directas: Las propiedades de CSS (Animations y Transitions) suelen ser la opción más rápida y sencilla. Son ideales para efectos visuales básicos y cambios de estado.
+Para animaciones complejas, interactivas, secuenciales o que requieren un control preciso con JavaScript: La Motion API es la mejor opción. Te da la flexibilidad y el poder necesarios para crear experiencias de animación ricas y dinámicas.
+Para simular comportamientos basados en el scroll o la posición en el viewport (como el ejemplo que proporcionaste): La Motion API, combinada con técnicas de JavaScript para detectar el scroll y actualizar la animación, puede ofrecer un control más preciso. Sin embargo, las propiedades de CSS con las APIs experimentales como animation-timeline: view() y animation-range (como en tu ejemplo) están diseñadas específicamente para este tipo de animaciones basadas en el viewport y pueden ser más declarativas si la compatibilidad del navegador no es una preocupación primordial.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your idea of putting a short description of the skills you acquired is excellent. This allows you to connect your studies to practical abilities without overwhelming the viewer with academic details.
+
+
+How to Implement Your Idea of Short Skill Descriptions:
+
+Instead of dedicating a large section to your studies, consider these approaches:
+
+Integrate Skills within Project Descriptions: For each project you showcase, clearly highlight the specific skills you utilized. For example:
+
+"This e-commerce website was built using React for the frontend, Node.js and Express for the backend, and styled with CSS and Tailwind CSS. Key skills demonstrated include component-based architecture, RESTful API design, and responsive web development."
+Create a Dedicated "Skills" Section: Have a separate section where you list your key technical and soft skills. You can then briefly mention the context in which you acquired these skills (e.g., "Proficient in JavaScript (acquired through academic studies and practical project experience)").
+
+Example Skills Section:
+Frontend: HTML, CSS, JavaScript (ES6+), React, Redux, Vue.js, Angular, Responsive Design, UI/UX Principles.
+Backend: Node.js, Express, Python, Django, RESTful APIs, Databases (SQL, NoSQL).
+Other: Version Control (Git), Agile Methodologies, Problem-Solving, Communication.
+(Optional short description for each skill)
+Link Skills to Studies (Briefly): In your "About Me" or "Education" section, you can briefly mention the areas of study that contributed to specific skills. For example:
+
+"My degree in Computer Science provided a strong foundation in data structures, algorithms, and software development principles, which are crucial to my work in building efficient and scalable web applications."
+Use Visuals: Consider using icons or progress bars in your "Skills" section to provide a quick visual representation of your proficiency.
+
+What to Include in Your Portfolio:
+
+Projects: These are the most important part. Showcase a variety of projects that demonstrate your skills and abilities. Include live demos or links to repositories whenever possible.
+Case Studies: For more complex projects, consider writing case studies that detail the problem you solved, your approach, the technologies you used, and the results.
+Code Samples (Optional): If appropriate for your field, you might include snippets of well-written code.
+Your Skills: As discussed above, clearly list your technical and soft skills.
+About Me: A brief section about you, your passion, and your career goals. You can subtly weave in relevant aspects of your education here.
+Contact Information: Make it easy for people to reach you.
+
