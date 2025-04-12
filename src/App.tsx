@@ -10,26 +10,24 @@ import './App.css';
 function App() {
   return (
     <>
-      <div className="view">
-        <div className="block">
           <NavBar />
-        </div>
-        <div className="block">
+
+
           <SocialBar />
-        </div>
-        <div className="block">
+
+
           <Banner />
-        </div>
-        <div className="block">
+
+
           <MyWorks />
-        </div>
-        <div className="block">
+
+
           <AboutMe />
-        </div>
-        <div className="block">
+
+
           <Footer />
-        </div>
-      </div>
+
+
     </>
   );
 }

@@ -23,11 +23,10 @@
     align-items: center;
     user-select: none;
     width: 90vw;
+    max-width: 75%;
     margin: 3rem 2rem;
     padding: 1.5rem;
-    border: 1px solid #ffffff22;
-    box-shadow: 0 7px 20px 5px #00000088;
-    border-radius: 0.7rem;
+
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
     overflow: hidden;
@@ -37,12 +36,14 @@
 
   @media screen and (max-width: 1600px) {
     .worksContainer {
-      max-width: 28.75rem;
-      margin: 5rem 1rem;
+     
+      margin: 7rem 1rem;
+      padding: 5rem 2rem;
     }
   }
 
   .workContainer{
+    
     border: 1px solid #ffffff22;
     box-shadow: 0 7px 20px 5px #00000088;
     border-radius: 0.7rem;
@@ -50,6 +51,7 @@
     -webkit-backdrop-filter: blur(7px);
     overflow: hidden;
     transition: 0.5s all;
+    text-align: center;
   }
   
   .workDescription {
@@ -57,8 +59,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: 19rem;
-    height: 18.75rem;
+    max-height: 10rem;
+    height: 15rem;
     width: 20rem;
     padding: 1rem 1rem 0 1rem;
     
@@ -68,7 +70,9 @@
   
   @media screen and (max-width: 1600px) {
     .workDescription {
-      max-width: 28.75rem;
+      height: auto;
+      width: 20rem;
+      max-width: 20rem;
       text-align: center;
       width: auto;
     }
@@ -86,8 +90,9 @@
   .description {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 2px ;
     margin-top: 1rem;
+    width: 100%;
     margin-bottom: 3rem;
     justify-content: center;
     align-items: center;
@@ -98,7 +103,9 @@
   .workImage {
     border-radius: 0.5rem;
     max-width: fit-content;
-    height: 13rem;
+    width: 8rem;
+    height: 8rem;
+    text-align: center;
     object-fit: cover;
     padding: 1.25rem;
   }

@@ -4,10 +4,26 @@ import Rickandmorty from '../../assets/img/MyWork/rickandmorty.png';
 import Innova from '../../assets/img/MyWork/Innova.png';
 import Spotify from '../../assets/img/MyWork/spotify.png';
 import codigochef from '../../assets/img/MyWork/codigochef.png';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const MyWorks: React.FC = () => {
+
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'center center'], 
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+
   return (
-    <div className="worksmaincontainer" id="myworks">
+    <motion.div
+      ref={ref}
+      style={{ opacity, scale }}
+      className="worksmaincontainer"
+      id="myworks"
+    >
       <h2>Projects</h2>
       <div className="worksContainer">
         <div className='workContainer'> 
@@ -69,7 +85,7 @@ const MyWorks: React.FC = () => {
         </div>
       </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
