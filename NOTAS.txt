@@ -1,3 +1,16 @@
+FRAMER Motion
+
+https://www.youtube.com/watch?v=IhhucYgv7RY
+
+
+Children Prop: estudiar
+
+https://www.youtube.com/watch?v=VcLXh9EdVs0
+
+https://www.youtube.com/watch?v=ISbSJa1E3Us
+
+
+
 No voy a usar Foto de Perfil, no suma mucho y no me gusta como queda
 
 I will Focus on my strenghs that its be calm and kinde
@@ -30,6 +43,9 @@ Para animaciones simples y directas: Las propiedades de CSS (Animations y Transi
 Para animaciones complejas, interactivas, secuenciales o que requieren un control preciso con JavaScript: La Motion API es la mejor opción. Te da la flexibilidad y el poder necesarios para crear experiencias de animación ricas y dinámicas.
 Para simular comportamientos basados en el scroll o la posición en el viewport (como el ejemplo que proporcionaste): La Motion API, combinada con técnicas de JavaScript para detectar el scroll y actualizar la animación, puede ofrecer un control más preciso. Sin embargo, las propiedades de CSS con las APIs experimentales como animation-timeline: view() y animation-range (como en tu ejemplo) están diseñadas específicamente para este tipo de animaciones basadas en el viewport y pueden ser más declarativas si la compatibilidad del navegador no es una preocupación primordial.
 
+
+margin de elementos 1.5rem
+gap:24px
 
 
 

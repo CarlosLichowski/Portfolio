@@ -3,13 +3,9 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const NavBar = () => {
-  const [activeLink, setActiveLink] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const onUpdateActiveLink = (value: string) => { // Explicitly type 'value' as string
-    setActiveLink(value);
-    setIsMenuOpen(false);
-  };
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,47 +27,45 @@ const NavBar = () => {
 
       <ul className={`links ${isMenuOpen ? 'show' : ''}`}>
         <li>
-          <a
-            href='#home'
-            className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
-            onClick={() => onUpdateActiveLink('home')}
-          >
-            Home
-          </a>
+        <a href="#home" onClick={(e) => {
+  e.preventDefault();
+  document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+}}>Home</a>
         </li>
         <li>
-          <a
-            href='#ourOffers'
-            className={
-              activeLink === 'ourOffers' ? 'active navbar-link' : 'navbar-link'
-            }
-            onClick={() => onUpdateActiveLink('ourOffers')}
-          >
-            Projects
-          </a>
+          <a href="#Projects" onClick={(e) => {
+  e.preventDefault();
+  document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' });
+}}>Projects</a>
+        </li>
+
+        <li>
+
+
+          <a href="#Skills" onClick={(e) => {
+  e.preventDefault();
+  document.getElementById('Skills')?.scrollIntoView({ behavior: 'smooth' });
+}}>Skills</a>
+
+          
         </li>
         <li>
-          <a
-            href='#courses'
-            className={
-              activeLink === 'courses' ? 'active navbar-link' : 'navbar-link'
-            }
-            onClick={() => onUpdateActiveLink('courses')}
-          >
-            Skills
-          </a>
+
+
+          <a href="#About" onClick={(e) => {
+  e.preventDefault();
+  document.getElementById('About')?.scrollIntoView({ behavior: 'smooth' });
+}}>About</a>
         </li>
+
         <li>
-          <a
-            href='#aboutus'
-            className={
-              activeLink === 'aboutus' ? 'active navbar-link' : 'navbar-link'
-            }
-            onClick={() => onUpdateActiveLink('aboutus')}
-          >
-            Contact
-          </a>
-        </li>
+
+
+<a href="#Contact" onClick={(e) => {
+e.preventDefault();
+document.getElementById('Contact')?.scrollIntoView({ behavior: 'smooth' });
+}}>Contact</a>
+</li>
       </ul>
     </nav>
   );

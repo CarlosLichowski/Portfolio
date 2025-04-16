@@ -1,7 +1,5 @@
 import Whatsapp from '../../assets/whatappicon.png'
-import Instagram from '../../assets/instagramicon.png'
-import Youtube from '../../assets/youtubeicon.png'
-import Facebook from '../../assets/facebookicon.png'
+import Linkedin from '../../assets/linkedinicon.png'
 
 import './SocialBar.css'
 
@@ -24,13 +22,11 @@ const SocialBar = () => {
       <img src={Whatsapp} alt="whatsapp" />
     </a>
 
-    <a href="https://www.youtube.com/@sanacionescuanticas-j6g">
-      <img src={Instagram} alt="youtube" />
+    <a href="https://www.linkedin.com/in/carlos-lichowski">
+      <img src={Linkedin} alt="Linkedin" />
     </a>
 
-    <a href="https://www.instagram.com/sanacionescuanticas/">
-      <img src={Facebook} alt="instagram" />
-    </a>
+
   </div>
 
   <div className="NavSocialIconsContainerMobile">
@@ -38,13 +34,7 @@ const SocialBar = () => {
             <img src={Whatsapp} alt="whatsapp" />
           </a>
 
-          <a href="https://www.youtube.com/@sanacionescuanticas-j6g">
-          <img src={Youtube} alt="youtube" />
-        </a>
 
-          <a href="https://www.instagram.com/sanacionescuanticas/">
-            <img src={Instagram} alt="instagram" />
-          </a>
         </div>
       </div>
   

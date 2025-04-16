@@ -1,12 +1,14 @@
 
 .banner {
+  min-height: 100vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-  min-height: 85vh;
+   min-height: calc(100vh - 100px);
+ 
     padding: 0;
-    margin:  3rem ;
+    scroll-snap-align: start;
     @media (max-width: 1400px) {
       height: auto;
       min-height: auto;
@@ -18,7 +20,7 @@
    
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    gap: 5rem;
+    gap: 12rem;
     margin-top: 100px; /* Midiendo el largo del navbar puedo asegurar  que empiece después del navbar poniendole un margin exactamente del largo del navbar */
     @media (max-width: 1400px) {
       grid-template-columns: 1fr;
@@ -73,6 +75,7 @@
     letter-spacing: .8px;
     line-height: 1.5em;
     width: 96%;
+    margin: 1.5rem 0;
 
   }
   .banner button {
@@ -84,25 +87,6 @@
     display: flex;
     align-items: center;
   }
-  .banner button img {
-    font-size: 25px;
-    margin-left: 10px;
-    transition: 0.3s ease-in-out;
-    line-height: 1;
-    margin-top: 5rem;
-
-    
-  }
-  .banner button:hover img{
-    margin-top: 5rem;
-    margin-left: 25px;
-  }
-
-  .txt-rotate > .wrap {
-    border-right: 0.08em solid #666;
-  }
-
-
 
   .BannerColumn1{
     width: 620px;
@@ -110,7 +94,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media (max-width: 1400px) {
       margin: 2rem 0 6rem 0;
@@ -126,11 +110,7 @@
     text-align: start;
   }
 
-  .BannerColumn1 img {
-    @media (max-width: 1400px) {
-      width: 40%;
-    }
-  }
+
 .BannerColumn2 
 {
   width: 100%;
@@ -143,38 +123,7 @@
    color: #004b7a;
 }
 
-
-
-
-
-
-
- iframe {
-  width: 700px;
-  height: 415px;
-   
-  @media (max-width: 1300px) {
-    width: 500px;
-    height: 275px;  
-    
-  }
-
-  @media (max-width: 700px) {
-      width: 100%;
-      height: 200px;
-  }
-}
-
-.NavsocialIcons{
-  margin-top: 4rem;
-
-}
-
-.photoPerfil {
-  border-radius: 50%;
-  padding: 8px;
-  width: 180px; /* Adjust size as needed */
-  height: auto;
-  object-fit: cover;
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.801))
+.aguila{
+  width: 400px;
+  margin:2rem;
 }

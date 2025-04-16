@@ -1,6 +1,6 @@
 .worksmaincontainer {
-    
-    height: auto;
+  scroll-snap-align: start;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,28 +22,22 @@
     justify-content: space-around;
     align-items: center;
     user-select: none;
-    width: 90vw;
-    max-width: 75%;
-    margin: 3rem 2rem;
-    padding: 1.5rem;
-
+    gap: 4rem;
+    width: 100%;
+    max-width: 100%;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
     overflow: hidden;
     transition: 0.5s all;
-  }
-  
-
-  @media screen and (max-width: 1600px) {
-    .worksContainer {
-     
-      margin: 7rem 1rem;
-      padding: 5rem 2rem;
-    }
+    margin: 1.5rem 0;
   }
 
   .workContainer{
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
     border: 1px solid #ffffff22;
     box-shadow: 0 7px 20px 5px #00000088;
     border-radius: 0.7rem;
@@ -52,6 +46,7 @@
     overflow: hidden;
     transition: 0.5s all;
     text-align: center;
+
   }
   
   .workDescription {

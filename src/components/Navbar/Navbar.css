@@ -1,44 +1,52 @@
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  scroll-snap-align:inherit ;
+  top: 0;
+  left: 0;
+  margin: 0; /* Elimina el margen inferior que tenías */
+  padding: 1rem 12vw; /* Añade padding horizontal para espaciar de los bordes */
+  z-index: 9999;
+  transition: 0.32 ease-in-out;
+  letter-spacing: .8px;
+  justify-content: space-between; /* Espacia el botón y los enlaces */
 
-.navbarContainer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    margin: 0 0 3vw 0;
-    padding: 1rem 0;
-    height: 2.625rem;
-    top: 0;
-    z-index: 9999;
-    transition: 0.32 ease-in-out;
-    letter-spacing: .8px;
-    border-bottom: 2px solid  rgb(33, 55, 88);
-    @media (max-width: 1000px) {
-      padding: 0 ;
-      justify-content: center;
-      height: 120px;
-    }
-
+  @media (max-width: 1000px) {
+    padding: 1rem; /* Reduce el padding en mobile */
+    height: auto;
+    flex-direction: column; /* Apila los elementos en mobile */
+    align-items: flex-start; /* Alinea a la izquierda en mobile */
+  }
 }
 
-
-
-.links{
+.links {
   display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center  ;
-        flex-wrap: wrap;
-        top: 95px;
-      }
-      
-      
-      
-      
+  justify-content: center; /* Centra los enlaces horizontalmente */
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  @media (max-width: 1000px) {
+    flex-direction: column; /* Apila los enlaces en mobile */
+    align-items: flex-start; /* Alinea a la izquierda en mobile */
+    margin-top: 1rem; /* Añade espacio debajo del botón en mobile */
+    width: 100%; /* Ocupa todo el ancho en mobile */
+    display: none; /* Oculta por defecto en mobile */
+  }
+}
+
+.links.show {
+  display: flex; /* Muestra los enlaces cuando el menú está abierto en mobile */
+}
+            
       .navbarContainer a{
-        margin: 3px;
+        
+        
         padding: 0;
         letter-spacing: .8px;
+        color: #f1f1f1;
         @media (max-width:800px) {
           
           margin: 0;
@@ -52,16 +60,13 @@
         opacity: 1;
       }
 
-      
-      
       .navbar-link{
         
         min-width: 5vw;
-        height: 29.2px;
+      
         border-right: .8px solid  rgb(33, 55, 88);
     color: #fff;
     display: inline-flex;
-    margin-right: 6px;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -104,7 +109,6 @@
     }
   }
   
-
   .logoContainer{
 
     display: flex;
@@ -151,8 +155,6 @@
   @media (max-width:50rem) {
     display: none;
   }  
-
-
 
 }  
 
@@ -204,8 +206,6 @@
 }  
 
 
-
-
 .hamburger-btn {
   display: none;
   background: none;
@@ -219,10 +219,13 @@
   transform: translateY(-50%);
   z-index: 1000;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: static; /* El botón fluye con el contenido en mobile */
+    transform: translateY(0);
+    margin-bottom: 1rem; /* Espacio debajo del botón en mobile */
   }
 }
 

@@ -1,8 +1,10 @@
-body{
-    background: rgb(37,65,98);
-    background: linear-gradient(90deg, rgb(20, 24, 48) 0%, rgb(17, 28, 66)  35%,rgb(17, 37, 83) 100%);
-    margin: 0;
+body {
+  background: rgb(6, 9, 12);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(17, 28, 66) 35%, rgb(0, 0, 0) 100%);
+  margin: 0;
   font-family: sans-serif;
   scroll-snap-type: y mandatory; /* Habilita el "scroll snapping" vertical */
   overflow-y: scroll; /* Asegura que el scroll funcione */
+  
 }
+

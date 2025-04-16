@@ -5,6 +5,7 @@
     padding: 2rem;
     position: fixed;
     bottom: 0;
+    left: 15px;
 }
 
 .NavSocialIconsContainer{
@@ -39,7 +40,7 @@
     align-items: center;
     justify-content: center;
     line-height: 1;
-    border: .0625rem solid  rgb(33, 55, 88);
+
     
   }
   

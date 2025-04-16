@@ -1,33 +1,54 @@
 
 import './Footer.css'
-import Email from './EmailForm';
 
 
 const Footer = () => {
 
   return (
-    <footer className="footer" id="footer">
-    <div className="footer-content">
-      <div className="footer-section">
-        <h3>Contacto</h3>
-        <ul >
-          <div className='footer1'>
+    <footer className="footer" id="Contact">
 
-          <li><strong>Email:</strong> carlosjlicho@gmail.com</li>
-          <li><strong>phone:</strong> +54 9 1157993571</li>
-          </div>
-          
-          <div className='footer2'>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/carlos-lichowski/">Carlos Lichowski</a></li>
-          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/">Carlos Lichowski</a></li>  
-          </div>
-        </ul>
+              <div className="footerTitle">
+                  <h3>Contact</h3>
+              </div>
+
+
+              <div className='footerContent'>
+                    <div className="footerbox">
+ <h1 className='footerboxh1'>footerboxTitle</h1>                             
+                      asdas
+                      </div>
+                    <div className="footerbox">
+<h1 className='footerboxh1'>footerboxTitle</h1>
+                      safasdsad
+                      </div>
+                    <div className="footerbox">
+<h1 className='footerboxh1'>footerboxTitle</h1>
+                      sdagsdfasf
+                      </div>
+              </div>
+
+
+              <div className="footerBottom">
+                  <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/carlos-lichowski/">Carlos Lichowski</a></li>
+                  <li><strong>Email:</strong> carlosjlicho@gmail.com</li>
+                  <li><strong>Github</strong>https://github.com/CarlosLichowski</li>
+              </div>
+
+   
+
+      
+      
+
+
+  
+         
+       
 
        
-      </div>
-    </div>
+      
+    
 
-    <Email/>
+   
   </footer>
   );
 };

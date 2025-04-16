@@ -22,7 +22,7 @@ const MyWorks: React.FC = () => {
       ref={ref}
       style={{ opacity, scale }}
       className="worksmaincontainer"
-      id="myworks"
+      id="Projects"
     >
       <h2>Projects</h2>
       <div className="worksContainer">
