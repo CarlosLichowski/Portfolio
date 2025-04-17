@@ -1,89 +1,92 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './MyWorks.css';
 import Rickandmorty from '../../assets/img/MyWork/rickandmorty.png';
 import Innova from '../../assets/img/MyWork/Innova.png';
 import Spotify from '../../assets/img/MyWork/spotify.png';
 import codigochef from '../../assets/img/MyWork/codigochef.png';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import WorkCard from './WorkCard/workCard'
+import { useInView, useAnimation, motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const MyWorks: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px 0px' }); // Ajusta el margen según necesites
+  const mainControls = useAnimation();
 
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'center center'], 
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    }
+  }, [isInView, mainControls]);
+
+  const projectData = [
+    {
+      title: 'Innova',
+      description: ['E-commerce', 'M.E.R.N', 'Team Project'],
+      imageSrc: Innova,
+      altText: 'Innova',
+      repoLink: 'https://github.com/Carlicho/Innova-Render',
+      animationProps: {
+        initial: { opacity: 0, x: -50 },
+        animate: { opacity: 1, x: 0 },
+        transition: { duration: 0.4, delay: 0.2 },
+      },
+    },
+    {
+      title: 'Spotify Clone',
+      description: ['ReactJs', 'Spotify Api'],
+      imageSrc: Spotify,
+      altText: 'Spotify',
+      repoLink: 'https://github.com/Carlicho/SpotifyClone2',
+      animationProps: {
+        initial: { opacity: 0, scale: 0.8 },
+        animate: { opacity: 1, scale: 1 },
+        transition: { duration: 0.4, delay: 0.4 },
+      },
+    },
+    {
+      title: 'RickandMorty Api',
+      description: ['M.E.R.N'],
+      imageSrc: Rickandmorty,
+      altText: 'Rickandmorty',
+      repoLink: 'https://github.com/Carlicho/RickandMorty',
+      animationProps: {
+        initial: { opacity: 0, y: 50 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.4, delay: 0.6 },
+      },
+    },
+    {
+      title: 'CodigoChef',
+      description: ['Restaurant', 'ReactJs', 'Freelance'],
+      imageSrc: codigochef,
+      altText: 'Restaurant web',
+      visitLink: 'https://codigochef.netlify.app/',
+      animationProps: {
+        initial: { opacity: 0, x: 50 },
+        animate: { opacity: 1, x: 0 },
+        transition: { duration: 0.4, delay: 0.8 },
+      },
+    },
+  ];
 
   return (
     <motion.div
       ref={ref}
-      style={{ opacity, scale }}
       className="worksmaincontainer"
       id="Projects"
+      initial="hidden"
+      animate={mainControls}
+      variants={{
+        hidden: {}, // No necesitamos animación aquí, la controlamos en las tarjetas
+        visible: {},
+      }}
     >
       <h2>Projects</h2>
       <div className="worksContainer">
-        <div className='workContainer'> 
-        
-        <img className="workImage" src={Innova} alt="Innova" />
-        <div className="workDescription">
-          <h2 className="descriptionH2">Innova</h2>
-          <ul className="description">
-            <li>E-commerce</li>
-            <li>M.E.R.N</li>
-            <li>Team Project</li>
-          </ul>
-          <a href="https://github.com/Carlicho/Innova-Render" target="_blank" rel="noopener noreferrer">
-            <button className="repositoryBtn">Repository</button>
-          </a>
-        </div>
-      
-      </div>
-
-      <div className="workContainer">
-        <img className="workImage" src={Spotify} alt="Spotify" />
-        <div className="workDescription">
-          <h2 className="descriptionH2">Spotify Clone</h2>
-          <ul className="description">
-            <li>ReactJs</li>
-            <li>Spotify Api</li>
-          </ul>
-          <a href="https://github.com/Carlicho/SpotifyClone2" target="_blank" rel="noopener noreferrer">
-            <button className="repositoryBtn">Repository</button>
-          </a>
-        </div>
-      </div>
-
-      <div className="workContainer">
-        <img className="workImage" src={Rickandmorty} alt="Rickandmorty" />
-        <div className="workDescription">
-          <h2 className="descriptionH2">RickandMorty Api</h2>
-          <ul className="description">
-            <li>M.E.R.N</li>
-          </ul>
-          <a href="https://github.com/Carlicho/RickandMorty" target="_blank" rel="noopener noreferrer">
-            <button className="repositoryBtn">Repository</button>
-          </a>
-        </div>
-      </div>
-
-      <div className="workContainer">
-        <img className="workImage" src={codigochef} alt="Restaurant web" />
-        <div className="workDescription">
-          <h2 className="descriptionH2">CodigoChef</h2>
-          <ul className="description">
-            <li>Restaurant</li>
-            <li>ReactJs</li>
-            <li>Freelance</li>
-          </ul>
-          <a href="https://codigochef.netlify.app/" target="_blank" rel="noopener noreferrer">
-            <button className="repositoryBtn">Visit Page</button>
-          </a>
-        </div>
-      </div>
+        {projectData.map((project, index) => (
+          <WorkCard key={index} {...project} />
+        ))}
       </div>
     </motion.div>
   );
