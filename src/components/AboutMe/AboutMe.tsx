@@ -1,10 +1,17 @@
 import React from 'react';
 import './AboutMe.css';
+import ReactIcon from '../../assets/png/tech/React.png'
+import Bootstrap from '../../assets/png/tech//Bootstrap-icon.png'
+import NodeJs from '../../assets/png/tech/node-icon.png'
+import Github from '../../assets/png/tech/github icon.png'
+import Python from '../../assets/png/tech/python.png'
+import Postgre from '../../assets/png/tech/postgre-icon.png'
 
 const AboutMe: React.FC = () => {
   return (
     <div className="aboutContainer" id="About">
-      <h1 className="aboutH1">About</h1>
+      <h2 className="aboutH2
+      ">About</h2>
 
       <div className="textColumn">
         <p className="text1">
@@ -16,6 +23,20 @@ const AboutMe: React.FC = () => {
           Having a background of 10 years experience in a hospital, I also developed my soft skills.
           I consider myself a proactive listener and a good team worker.
         </p>
+      </div>
+
+      <div className='skillsIconsContainer'>
+        <h2>Skills</h2>
+        
+        <div className='skillsIcons'>
+        <img src={ReactIcon} alt=''/>
+        <img src={Python} alt=''/>
+        <img src={NodeJs} alt=''/>
+        <img src={Postgre} alt=''/>
+        <img src={Github} alt=''/>
+        <img src={Bootstrap} alt=''/>
+        
+        </div>
       </div>
     </div>
   );

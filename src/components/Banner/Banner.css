@@ -22,7 +22,7 @@
     grid-template-columns: 1fr 1fr ;
     gap: 12rem;
     margin-top: 100px; /* Midiendo el largo del navbar puedo asegurar  que empiece después del navbar poniendole un margin exactamente del largo del navbar */
-    @media (max-width: 1400px) {
+    @media (max-width: 1600px) {
       grid-template-columns: 1fr;
       height: auto;
       justify-content: center;

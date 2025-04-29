@@ -4,13 +4,13 @@ import Rickandmorty from '../../assets/img/MyWork/rickandmorty.png';
 import Innova from '../../assets/img/MyWork/Innova.png';
 import Spotify from '../../assets/img/MyWork/spotify.png';
 import codigochef from '../../assets/img/MyWork/codigochef.png';
-import WorkCard from './WorkCard/workCard'
+import WorkCard from './WorkCard/WorkCard';
 import { useInView, useAnimation, motion } from 'framer-motion';
 import { useEffect } from 'react';
 
 const MyWorks: React.FC = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px 0px' }); // Ajusta el margen según necesites
+  const isInView = useInView(ref, { once: true, margin: '-50px 0px' }); 
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -27,9 +27,9 @@ const MyWorks: React.FC = () => {
       altText: 'Innova',
       repoLink: 'https://github.com/Carlicho/Innova-Render',
       animationProps: {
-        initial: { opacity: 0, x: -50 },
+        initial: { opacity: 0, x: -100 },
         animate: { opacity: 1, x: 0 },
-        transition: { duration: 0.4, delay: 0.2 },
+        transition: { duration: 1.5, delay: 0.4 },
       },
     },
     {
@@ -39,9 +39,9 @@ const MyWorks: React.FC = () => {
       altText: 'Spotify',
       repoLink: 'https://github.com/Carlicho/SpotifyClone2',
       animationProps: {
-        initial: { opacity: 0, scale: 0.8 },
+        initial: { opacity: 0, scale: 0.5 },
         animate: { opacity: 1, scale: 1 },
-        transition: { duration: 0.4, delay: 0.4 },
+        transition: { duration: 1.5 , delay: 0.6 },
       },
     },
     {
@@ -51,9 +51,9 @@ const MyWorks: React.FC = () => {
       altText: 'Rickandmorty',
       repoLink: 'https://github.com/Carlicho/RickandMorty',
       animationProps: {
-        initial: { opacity: 0, y: 50 },
+        initial: { opacity: 0, y: 60 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.4, delay: 0.6 },
+        transition: { duration: 1.5, delay: 0.7},
       },
     },
     {
@@ -63,14 +63,15 @@ const MyWorks: React.FC = () => {
       altText: 'Restaurant web',
       visitLink: 'https://codigochef.netlify.app/',
       animationProps: {
-        initial: { opacity: 0, x: 50 },
+        initial: { opacity: 0, x: 70 },
         animate: { opacity: 1, x: 0 },
-        transition: { duration: 0.4, delay: 0.8 },
+        transition: { duration: 1.5, delay: 0.7 },
       },
     },
   ];
 
   return (
+   
     <motion.div
       ref={ref}
       className="worksmaincontainer"
@@ -78,7 +79,7 @@ const MyWorks: React.FC = () => {
       initial="hidden"
       animate={mainControls}
       variants={{
-        hidden: {}, // No necesitamos animación aquí, la controlamos en las tarjetas
+        hidden: {},
         visible: {},
       }}
     >
@@ -89,6 +90,7 @@ const MyWorks: React.FC = () => {
         ))}
       </div>
     </motion.div>
+  
   );
 };
 

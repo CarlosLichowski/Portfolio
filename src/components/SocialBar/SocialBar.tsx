@@ -1,5 +1,6 @@
-import Whatsapp from '../../assets/whatappicon.png'
+import Email from '../../assets/gmailIcon.png'
 import Linkedin from '../../assets/linkedinicon.png'
+import GitHub from '../../assets/githubIcon.png'
 
 import './SocialBar.css'
 
@@ -7,10 +8,7 @@ import './SocialBar.css'
 
 const SocialBar = () => {
 
-    const handleWhatsAppClick = () => {
-        const whatsappUrl = `https://wa.me/+5491123048560/?text=urlencodedtext`; 
-        window.open(whatsappUrl, '_blank'); 
-      };
+
     
 
 
@@ -18,21 +16,42 @@ const SocialBar = () => {
     <div className="SocialContainer">   
 
          <div className="NavSocialIconsContainer">
-    <a href="#" onClick={handleWhatsAppClick}>
-      <img src={Whatsapp} alt="whatsapp" />
-    </a>
 
+         <a href="https://github.com/CarlosLichowski" >
+      <img src={GitHub} alt="GitHub" />
+    </a>
+    
     <a href="https://www.linkedin.com/in/carlos-lichowski">
       <img src={Linkedin} alt="Linkedin" />
     </a>
 
+    <a href="https://www.linkedin.com/in/carlos-lichowski">
+      <img src={Email} alt="Email" />
+    </a>
+
+
+    
+
+
 
   </div>
 
+
+  
+
   <div className="NavSocialIconsContainerMobile">
-          <a href="#" onClick={handleWhatsAppClick}>
-            <img src={Whatsapp} alt="whatsapp" />
-          </a>
+  <a href="https://www.linkedin.com/in/carlos-lichowski">
+      <img src={Email} alt="Email" />
+    </a>
+
+
+    <a href="https://www.linkedin.com/in/carlos-lichowski">
+      <img src={Linkedin} alt="Linkedin" />
+    </a>
+    
+    <a href="https://github.com/CarlosLichowski" >
+      <img src={GitHub} alt="GitHub" />
+    </a>
 
 
         </div>

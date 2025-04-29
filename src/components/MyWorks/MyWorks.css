@@ -1,4 +1,5 @@
 .worksmaincontainer {
+  position: relative;
   scroll-snap-align: start;
     min-height: 100vh;
     display: flex;
@@ -14,6 +15,12 @@
     .container {
       flex-direction: column;
     }
+
+
+  }
+
+  .worksmaincontainer h2{
+    margin: 0 0 10rem 0;
   }
   
   .worksContainer {
@@ -22,7 +29,7 @@
     justify-content: space-around;
     align-items: center;
     user-select: none;
-    gap: 4rem;
+    gap: 5rem;
     width: 100%;
     max-width: 100%;
     backdrop-filter: blur(7px);
@@ -39,11 +46,21 @@
   @media screen and (max-width: 1600px) {
     .workDescription {
       height: auto;
-      width: 20rem;
-      max-width: 20rem;
+      width: 25rem;
+      max-width: 25rem;
       text-align: center;
       width: auto;
     }
+
+    .worksContainer{
+      flex-direction: column;
+    }
+  }
+
+  .MoreProjectsBtn{
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
   
   

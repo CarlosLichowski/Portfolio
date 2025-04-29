@@ -8,11 +8,16 @@ interface AnimateOnViewProps {
     animate: {};
     transition?: {};
   };
+  threshold?: number; 
 }
 
-const AnimateOnView: React.FC<AnimateOnViewProps> = ({ children, animationProps }) => {
+const AnimateOnView: React.FC<AnimateOnViewProps> = ({
+  children,
+  animationProps,
+  threshold = 1, 
+}) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, amount: threshold });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -26,7 +31,7 @@ const AnimateOnView: React.FC<AnimateOnViewProps> = ({ children, animationProps 
       ref={ref}
       initial={animationProps?.initial || { opacity: 0, y: 50 }}
       animate={controls}
-      transition={animationProps?.transition || { duration: 0.3 }}
+      transition={animationProps?.transition || { duration: 0.1 }}
     >
       {children}
     </motion.div>
