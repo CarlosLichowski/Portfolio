@@ -28,13 +28,13 @@ const AboutMe: React.FC = () => {
       <div className='skillsIconsContainer'>
         <h2>Skills</h2>
         
-        <div className='skillsIcons'>
-        <img src={ReactIcon} alt=''/>
-        <img src={Python} alt=''/>
-        <img src={NodeJs} alt=''/>
-        <img src={Postgre} alt=''/>
-        <img src={Github} alt=''/>
-        <img src={Bootstrap} alt=''/>
+        <div className='skillsIcons' id='Skills'>
+        <img src={ReactIcon} alt='React Icon'/>
+        <img src={Python} alt='Python Icon'/>
+        <img src={NodeJs} alt='NodeJs Icon'/>
+        <img src={Postgre} alt='Postgre Icon'/>
+        <img src={Github} alt='Github Icon'/>
+        <img src={Bootstrap} alt='Bootstrap Icon'/>
         
         </div>
       </div>

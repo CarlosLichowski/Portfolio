@@ -123,6 +123,16 @@
       width: 100%;
       margin: 0;
     }
+
+    .skillsIcons{
+      gap: 1rem;
+      width: 100vw;
+      flex-wrap: wrap;
+    }
+
+    .skillsIcons img{
+      width: 2.5rem;
+    }
   }
 
   

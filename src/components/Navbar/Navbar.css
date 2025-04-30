@@ -5,40 +5,45 @@
   scroll-snap-align:inherit ;
   top: 0;
   left: 0;
-  margin: 0; /* Elimina el margen inferior que tenías */
-  padding: 1rem 12vw; /* Añade padding horizontal para espaciar de los bordes */
+  margin: 0; 
+  padding: 1rem 12vw; 
   z-index: 9999;
   transition: 0.32 ease-in-out;
   letter-spacing: .8px;
-  justify-content: space-between; /* Espacia el botón y los enlaces */
+  justify-content: space-between; 
 
   @media (max-width: 1000px) {
-    padding: 1rem; /* Reduce el padding en mobile */
+    padding: 1rem; 
     height: auto;
-    flex-direction: column; /* Apila los elementos en mobile */
-    align-items: flex-start; /* Alinea a la izquierda en mobile */
+    flex-direction: column;
+    align-items: flex-start; 
   }
 }
 
 .links {
   display: flex;
-  justify-content: center; /* Centra los enlaces horizontalmente */
+  justify-content: center; 
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
   gap: 2rem;
 
   @media (max-width: 1000px) {
-    flex-direction: column; /* Apila los enlaces en mobile */
-    align-items: flex-start; /* Alinea a la izquierda en mobile */
-    margin-top: 1rem; /* Añade espacio debajo del botón en mobile */
-    width: 100%; /* Ocupa todo el ancho en mobile */
-    display: none; /* Oculta por defecto en mobile */
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-top: 1rem; 
+    width: 100%; 
+    display: none; 
   }
 }
 
 .links.show {
-  display: flex; /* Muestra los enlaces cuando el menú está abierto en mobile */
+  display: flex;
+  background:  linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255,255,255, 0));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+ 
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
 }
             
       .navbarContainer a{

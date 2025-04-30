@@ -21,6 +21,10 @@
 
   .worksmaincontainer h2{
     margin: 0 0 10rem 0;
+
+    @media (max-width: 1000px) {
+     margin: 10rem 0 0 0; 
+    }
   }
   
   .worksContainer {

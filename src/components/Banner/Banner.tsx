@@ -14,7 +14,7 @@ const Banner = () => {
               <p>I am a calm person with a deep connection to nature and an enthusiastic cyclist. I value harmony and balance within teamwork. My calm nature promotes a serene and productive collaborative environment</p>
             </div>
             <div className='BannerColumn2'>
-              <img src={aguila} className='aguila' alt="Águila" />
+              <img src={aguila} className='BannerImg' alt="Águila" />
             </div>
           </div>
         </div>
