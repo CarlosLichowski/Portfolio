@@ -52,8 +52,13 @@
       gap: 2rem; /* Reduce gap for smaller screens */
     }
 
+    .worksImagecontainer{
+      width: 100%;
+      height: 50px;
+    }
 
-    .worksmaincontainer h2{
+
+    .worksmaincontainerh2{
       margin: 0 0 10rem 0;
 
       

@@ -10,7 +10,6 @@
    font-optical-sizing: auto;
    font-weight: 200;
    font-style: normal;
- 
     padding: 0;
     scroll-snap-align: start;
     @media (max-width: 1400px) {
@@ -24,7 +23,7 @@
   
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    gap: 12rem;
+    gap: 10rem;
     margin-top: 100px; /* Midiendo el largo del navbar puedo asegurar  que empiece después del navbar poniendole un margin exactamente del largo del navbar */
     @media (max-width: 1600px) {
       grid-template-columns: 1fr;

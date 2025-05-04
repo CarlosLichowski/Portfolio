@@ -11,6 +11,8 @@ const AboutMe: React.FC = () => {
   return (
     <div className="aboutContainer" id="About">
 
+      <div className='textColumnContainer'>
+
       <div className="textColumn">
       <h2 className="aboutH2
       ">About</h2>
@@ -24,8 +26,11 @@ const AboutMe: React.FC = () => {
           I consider myself a proactive listener and a good team worker.
         </p>
       </div>
+      </div>
 
       <div className='skillsIconsContainer' id='Skills'>
+        <div className='SkillsColumn'>
+
         <h2>Skills</h2>
         
         <div className='skillsIcons' >
@@ -35,7 +40,10 @@ const AboutMe: React.FC = () => {
         <img src={Postgre} alt='Postgre Icon'/>
         <img src={Github} alt='Github Icon'/>
         <img src={Bootstrap} alt='Bootstrap Icon'/>
+
+
         
+        </div>
         </div>
       </div>
     </div>
