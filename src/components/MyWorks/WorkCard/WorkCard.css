@@ -1,8 +1,8 @@
-.workContainer{
+ .workContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 25rem;
     height: 31.25rem;
     border: 1px solid #ffffff22;
@@ -13,54 +13,84 @@
     overflow: hidden;
     transition: 0.5s all;
     text-align: center;
+    color: #f1f1f1;
+    @media (max-width: 1000px) {
+      width: 320px;
+      height: 350px;
+      }} 
 
- 
-    
 
-  }
-  
-  .workDescription {
+    .workDescription {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    max-height: 10rem;
-    height: 15rem;
-    width: 20rem;
-    padding: 1rem 1rem 0 1rem;
+    width: 100%;
+    padding: 0;
+
+    @media (max-width: 1000px) {
+      width: 100px;
+      height: auto;
+      justify-content: start;
+    }
     
   }
 
   .CardTitleH2 {
-    display: flex;
-    padding: 0 1.25em;
-    font-size: 1.1rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    font-size: 1.4rem;
+    @media (max-width: 1000px) {
+      padding: 0; 
+      font-size:15px ; 
+    }
   }
   
   .description {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    padding: 20px 2px ;
-    margin-top: 1rem;
-    width: 100%;
-    margin-bottom: 3rem;
+    text-align: center;
     justify-content: center;
     align-items: center;
     text-align: center;
     list-style: none;
+    gap: 1rem;
+
+    @media (max-width: 1000px) {
+      padding: 0; 
+      margin: 0;
+      align-items: start; 
+      justify-content: start;
+      text-align: center;
+      
+    }
   }
   
+  .workImageContainer{
+    height: auto;
+    width: 100%;
+    @media (max-width: 1000px) {
+      padding: 0 0 0 0;  
+      width: 55px;
+      height: 55px;
+     
+    }
+  }
   .workImage {
-    border-radius: 0.5rem;
-    max-width: fit-content;
-    width: 8rem;
-    height: 8rem;
+    border-radius: 0.3px;
+    max-width:max-content;
+    width: 7rem;
+    height: auto;
     text-align: center;
     object-fit: cover;
-    padding: 1.25rem;
+
+    padding: 3rem 0 0 0 ;
+
+    @media (max-width: 1000px) {
+      padding: 1.2rem 0 0 0;  
+      width: 3rem;
+     
+    }
   }
   
   .repositoryBtn {
@@ -70,7 +100,13 @@
     text-shadow: 0.5px 0.5px 0.5px #000000;
     border: 1px solid #31223d;
     border-radius: 20px;
-    margin: 1.3rem 0 2rem 0;
+    margin: 0.5rem 0 0 0;
     padding: 0.5rem;
     background: linear-gradient(to bottom, #360327, #1e24d0);
-  }
+    @media (max-width: 1000px) {
+      padding: 0; 
+    }
+  } 
+
+
+

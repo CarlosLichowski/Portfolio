@@ -6,6 +6,13 @@
    justify-content: center;
    align-items: center;
    min-height: calc(100vh - 100px);
+
+
+
+   font-family: "Inter", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 200;
+   font-style: normal;
  
     padding: 0;
     scroll-snap-align: start;
@@ -17,7 +24,7 @@
   }
 
   .BannerContainer{
-   
+  
     display: grid;
     grid-template-columns: 1fr 1fr ;
     gap: 12rem;
@@ -27,6 +34,10 @@
       height: auto;
       justify-content: center;
       gap: 3rem;
+    }
+
+    @media (max-width: 1000px) {
+      margin-top: 0;
     }
   }
   .banner .tagline {
@@ -50,12 +61,27 @@
     letter-spacing: .8px;
     line-height: 1;
     color: #dfdfdf;
+    
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+
     margin-bottom: 20px;
     display: block;
     text-shadow: 2px 2px 2px rgba(73, 73, 73, 0.986);
     @media (max-width: 1300px) {
       font-size: 2.5rem;
     }
+
+    
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  
   }
 
   .banner h3{
@@ -104,6 +130,11 @@
       width: 300px;
       text-align: center;
       align-items: center;
+    }
+
+    @media (max-width: 1000px) {
+      margin: 1rem;
+
     }
   } 
 

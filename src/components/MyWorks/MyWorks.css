@@ -1,6 +1,15 @@
+
+
 .worksmaincontainer {
   position: relative;
   scroll-snap-align: start;
+  width: 100%;
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,22 +28,15 @@
 
   }
 
-  .worksmaincontainer h2{
-    margin: 0 0 10rem 0;
-
-    @media (max-width: 1000px) {
-     margin: 10rem 0 0 0; 
-    }
-  }
-  
   .worksContainer {
+    
     display: flex;
     flex-direction:row;
     justify-content: space-around;
     align-items: center;
     user-select: none;
     gap: 5rem;
-    width: 100%;
+    width: 80%;
     max-width: 100%;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
@@ -44,28 +46,42 @@
   }
 
 
-
-
-  
-  @media screen and (max-width: 1600px) {
-    .workDescription {
-      height: auto;
-      width: 25rem;
-      max-width: 25rem;
-      text-align: center;
-      width: auto;
+  @media screen and (max-width: 1000px) {
+    .worksContainer {
+      width: 100%; /* Ensures it takes full width of the screen */
+      gap: 2rem; /* Reduce gap for smaller screens */
     }
 
-    .worksContainer{
-      flex-direction: column;
-    }
-  }
 
-  .MoreProjectsBtn{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
+    .worksmaincontainer h2{
+      margin: 0 0 10rem 0;
+
+      
+      font-family: "Open Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+     
+      
   
-  
-  
+      @media (max-width: 1000px) {
+       margin: 10rem 0 0 0; 
+      }
+    } 
+
+
+
+
+    .MoreProjectsBtn{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    @media screen and (max-width: 1600px) {
+      .worksContainer{
+        flex-direction: column;
+        gap: 10rem;
+      }
+
+
+    }}

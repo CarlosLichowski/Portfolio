@@ -6,7 +6,10 @@
     flex-direction: column;
     align-items: center;
     gap: 10rem; 
-    font-family: sans-serif; 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
   }
   
   .footerTitle {
@@ -16,8 +19,12 @@
   
   .footerTitle h3 {
     font-size: 1.5rem;
-    font-weight: 300; 
+    font-weight: 500; 
     color: #e0e0e0;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+
   }
   
   .footerContent {
@@ -67,6 +74,8 @@
   .footerBottom button {
     border: none;
     background:none;
+
+    
   }
 
   .footerBottom h2{
@@ -90,6 +99,8 @@
   .footerBottom a {
     color: #80cbc4; /* Example link color */
     text-decoration: none;
+
+
     
     
   }
@@ -125,6 +136,7 @@
       max-width: 800px;
       width: 800px;
       display: flex;
+      
       padding: 0;
     }
 
@@ -149,6 +161,8 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+
+    
     
     @media (max-width: 1000px) {
       width: 20px; 
@@ -171,6 +185,7 @@
         padding: 1rem; /* Adjust padding for smaller screens */
         max-width: 100%; /* Set max-width to full for responsiveness */
         width: auto; /* Allow the width to adjust automatically */
+        align-items: start;
     }
 
     .footerContent {
@@ -185,7 +200,8 @@
     }
 
     .footerBottom {
-        width: auto; /* Allow bottom section to adjust automatically */
+      flex-direction: row;
+        
         padding: 1rem; /* Optional: Add padding for better spacing */
     }
 

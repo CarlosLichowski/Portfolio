@@ -22,7 +22,7 @@ const MyWorks: React.FC = () => {
   const projectData = [
     {
       title: 'Innova',
-      description: ['E-commerce', 'M.E.R.N', 'Team Project'],
+      description: ['E-commerce', 'M.E.R.N'],
       imageSrc: Innova,
       altText: 'Innova',
       repoLink: 'https://github.com/Carlicho/Innova-Render',
@@ -58,7 +58,7 @@ const MyWorks: React.FC = () => {
     },
     {
       title: 'CodigoChef',
-      description: ['Restaurant', 'ReactJs', 'Freelance'],
+      description: ['Restaurant', 'ReactJs'],
       imageSrc: codigochef,
       altText: 'Restaurant web',
       visitLink: 'https://codigochef.netlify.app/',

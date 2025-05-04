@@ -1,10 +1,10 @@
 import './Banner.css';
 import aguila from '../../assets/png/aguila.png';
-import AnimateOnView from '../AnimateOnView/AnimateOnViewProps';
+
 
 const Banner = () => {
   return (
-    <AnimateOnView animationProps={{ initial: { opacity: 0, y: 75 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.2, delay: 0.5 } }}>
+   
       <section className='banner' id='home'>
         <div className="box1">
           <div className='BannerContainer' id="home">
@@ -19,7 +19,7 @@ const Banner = () => {
           </div>
         </div>
       </section>
-    </AnimateOnView>
+    
   );
 };
 export default Banner;

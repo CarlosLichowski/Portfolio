@@ -10,10 +10,10 @@ import Postgre from '../../assets/png/tech/postgre-icon.png'
 const AboutMe: React.FC = () => {
   return (
     <div className="aboutContainer" id="About">
-      <h2 className="aboutH2
-      ">About</h2>
 
       <div className="textColumn">
+      <h2 className="aboutH2
+      ">About</h2>
         <p className="text1">
           As a developer, I strive to create beautiful websites with stunning design and great performance.
           I enjoy creating extremely visual and interactive experiences using any technology that will deliver the best results.

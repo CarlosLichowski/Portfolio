@@ -4,9 +4,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 24px;
+    gap: 15rem;
     align-items: center;
     color: #f1f1f1;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    
 
   }
 
@@ -18,8 +24,12 @@
   }
 
   .skillsIconsContainer h2{
-    margin: 5rem 0;
+    padding: 0 0 3rem 0;
+    border-bottom: 2px solid grey;
+    width: 80%;
+    text-align: center;
   }
+
   .skillsIcons{
     display: flex;
     flex-direction: row;
@@ -48,7 +58,7 @@
       width: 80%;
       text-align: center;
       justify-content: center;
-      padding: 2rem 0;
+      padding: 5rem 0;
     }
   }
   
@@ -59,7 +69,7 @@
     border-bottom: 2px solid grey;
     font-size: 1.1rem;
     letter-spacing: 0.125rem;
-    margin: 0 0 10rem 0;
+    margin: 0 0 3rem 0;
   }
   
   @media screen and (max-width: 1600px) {
@@ -76,7 +86,7 @@
     align-items: center;
     font-size: 1.1rem;
     letter-spacing: 0.125rem;
-    width: 80%;
+    width: 100%;
     line-height: 2rem;
   }
   
