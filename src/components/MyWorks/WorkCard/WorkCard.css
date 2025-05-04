@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 25rem;
     height: 31.25rem;
     border: 1px solid #ffffff22;
@@ -47,6 +47,8 @@
   .description {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 9rem;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -54,6 +56,11 @@
     align-items: center;
     text-align: center;
     list-style: none;
+    background:  linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
     gap: 1rem;
 
     @media (max-width: 1000px) {
@@ -67,7 +74,7 @@
   }
   
   .workImageContainer{
-    height: auto;
+    height: 100%;
     width: 100%;
     @media (max-width: 1000px) {
       padding: 0 0 0 0;  
@@ -94,6 +101,9 @@
   }
   
   .repositoryBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     font-size: 1.1rem;
     box-shadow: 0.5px 0.5px 23px 6px #2512d1bc;
@@ -101,7 +111,7 @@
     border: 1px solid #31223d;
     border-radius: 20px;
     margin: 0.5rem 0 0 0;
-    padding: 0.5rem;
+    padding: 0.7rem;
     background: linear-gradient(to bottom, #360327, #1e24d0);
     @media (max-width: 1000px) {
       padding: 0; 

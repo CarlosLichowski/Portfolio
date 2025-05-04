@@ -1,221 +1,145 @@
 .footer {
-    height: 80vh;
-    color: #f1f1f1; 
-    padding: 2rem 2vw; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10rem; 
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  .footerTitle {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .footerTitle h3 {
-    font-size: 1.5rem;
-    font-weight: 500; 
-    color: #e0e0e0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40% 1fr 1fr; /* título arriba, contenido en medio, bottom abajo */
+  gap: 2rem; /* opcional, espacio entre filas */
+  padding:2rem 0 ;
+  color: #f1f1f1;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
 
+.footerTitle {
+  grid-row: 1; 
+  text-align: center;
+  margin-bottom: 4rem; 
+  padding-bottom: 2rem;
+  border-bottom: 2px solid grey;
+}
+
+.footerTitle h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #e0e0e0;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
+}
 
-  }
-  
-  .footerContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4vh; 
-    flex-wrap: wrap; 
-  }
-  
-  .footerbox {
+.footerContent {
+  grid-row: 2; /* en medio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footerbox {
     color: #d1d1d1;
     padding: 1.5rem;
     text-align: center;
-    flex: 1 1 300px; 
-    background:  linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255, 0));
+    flex: 1 1 300px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
-  }
-  
-  .footerboxh3 {
+}
+
+.footerboxh3 {
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 1.5rem;
     letter-spacing: 0.5px;
-  }
-  
-  .footerbox p {
+}
+
+.footerbox p {
     font-size: 0.9rem;
     line-height: 1.4;
     color: #a3a3a3;
-  }
-  
-  .footerBottom {
+}
+
+.footerBottom {
+  grid-row: 3; /* abajo */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #a3a3a3;
+}
+
+.footerBottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
     display: flex;
-    align-items: row;
-    flex-direction: column;
-    width: 1200px;
-    text-align: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    color: #a3a3a3;
-  }
+    flex-direction: row;
+    gap: 2rem; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
 
-  .footerBottom button {
-    border: none;
-    background:none;
+.footerBottom li {
+    margin: 0;
+    list-style: none;
+}
 
-    
-  }
+.footerBottom a {
+    color: #80cbc4;
+    text-decoration: none;
+}
 
-  .footerBottom h2{
+.footerBottom h2 {
     font-size: 1.2rem;
     color: #f1f1f1;
     border-bottom: 2px solid #1056a7;
     letter-spacing: 1.8px;
-    background:  linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255, 0));
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
     padding: 5px;
-  }
+}
 
-  .footerBottom li {
-    list-style: none;
-    margin: 0.5rem 10rem;
-  }
-  
-  .footerBottom a {
-    color: #80cbc4; /* Example link color */
-    text-decoration: none;
+.footerEmail {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footeranchors{
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
 
-    
-    
-  }
-  
-  @media (max-width: 2000px) {
 
-    .footerbox{
-      padding: 0;
-      flex: 0;
-    }
 
-    .footerBottom li {
-    
-      margin: 0;
-    }
 
- 
 
-    .footerContent {
-      flex-direction: column; 
-      flex-wrap: nowrap;
-      align-items: center;
-      
-    }
-  
-    .footerbox {
-      width: 250px ;
-      
-      grid-template-columns: 1fr;
-    }
-
-    .footer{
-      max-width: 800px;
-      width: 800px;
-      display: flex;
-      
-      padding: 0;
-    }
-
-    .footerEmail{
-      padding: 0 0 3rem 0;
-    }
-
-    .footerBottom{
-      width: 250px;
-    }
-  }
-
-  .footerBtn {
-    width: 7em;
-    position: relative;
-    height: 3.5em;
-    outline: none;
-    background-color: transparent;
-    color: white;
-    transition: 0.5s;
-    border-radius: 0.3em;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-
-    
-    
-    @media (max-width: 1000px) {
-      width: 20px; 
-     }
-  }
-  
-  .footeranchors{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (max-width: 1000px) {
-     width: 250px; 
-    }
-    
-  }
-
-  @media (max-width: 1000px) {
+@media (min-width: 768px) {
     .footer {
-        padding: 1rem; /* Adjust padding for smaller screens */
-        max-width: 100%; /* Set max-width to full for responsiveness */
-        width: auto; /* Allow the width to adjust automatically */
-        align-items: start;
+        align-items: center; 
     }
 
     .footerContent {
-        flex-direction: column;  /* Stack boxes vertically */
-        align-items: center;  /* Center items */
-    }
-
-    .footerbox {
-        width: 90%; /* Use a percentage width for responsiveness */
-        margin: 1rem 0; /* Add margin for spacing */
-        flex: none; /* Prevent flex basis issues */
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .footerBottom {
-      flex-direction: row;
-        
-        padding: 1rem; /* Optional: Add padding for better spacing */
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .footerBottom li {
-        margin: 0.5rem 0; /* Adjust to vertical spacing */
-    }
+    .footerBottom ul {
+        margin: 1rem;
 
-    .footerBtn {
-        width: 100%; /* Expand buttons to fill available space */
-    }
-
-    .footeranchors {
-        flex-direction: column; /* Stack links vertically */
-        width: auto; /* Allow width to adjust automatically */
-        align-items: center; /* Center the anchors */
     }
 }

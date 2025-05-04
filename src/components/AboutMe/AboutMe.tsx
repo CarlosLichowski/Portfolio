@@ -25,10 +25,10 @@ const AboutMe: React.FC = () => {
         </p>
       </div>
 
-      <div className='skillsIconsContainer'>
+      <div className='skillsIconsContainer' id='Skills'>
         <h2>Skills</h2>
         
-        <div className='skillsIcons' id='Skills'>
+        <div className='skillsIcons' >
         <img src={ReactIcon} alt='React Icon'/>
         <img src={Python} alt='Python Icon'/>
         <img src={NodeJs} alt='NodeJs Icon'/>
