@@ -3,6 +3,7 @@ import './Footer.css';
 import AnimateOnView from '../AnimateOnView/AnimateOnViewProps'; // Adjust the path as needed
 
 
+
 const Footer = () => {
   return (
     <footer className="footer" id="Contact">
@@ -33,8 +34,8 @@ const Footer = () => {
         </AnimateOnView>
         <AnimateOnView
           animationProps={{
-            initial: { opacity: 0, scale: 0.8 },
-            animate: { opacity: 1, scale: 1 },
+            initial: { opacity: 0, X:0 },
+            animate: { opacity: 1, x:0 },
             transition: { duration: 0.5, delay: 0.4 },
           }}
         >

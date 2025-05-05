@@ -29,7 +29,7 @@
   }
 
   .worksContainer {
-    
+
     display: flex;
     flex-direction:row;
     justify-content: space-around;
@@ -42,7 +42,7 @@
     -webkit-backdrop-filter: blur(7px);
     overflow: hidden;
     transition: 0.5s all;
-    margin: 1.5rem 0;
+    margin: 7rem 0 1.5rem 0;
   }
 
 

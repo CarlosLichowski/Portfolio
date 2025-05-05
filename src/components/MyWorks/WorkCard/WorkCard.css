@@ -128,13 +128,14 @@
     justify-content: center;
     color: #fff;
     font-size: 1.1rem;
-    box-shadow: 0.5px 0.5px 23px 6px #2512d1bc;
+    box-shadow: 0.5px 0.5px 16px 6px #1f11a1bc;
     text-shadow: 0.5px 0.5px 0.5px #000000;
     border: 1px solid #31223d;
     border-radius: 20px;
     margin: 0.5rem 0 0 0;
     padding: 0.7rem;
-    background: linear-gradient(to bottom, #360327, #1e24d0);
+    background: linear-gradient(to bottom, #0b0336, #1c2091);
+    cursor: pointer;
 
     @media (max-width: 1000px) {
       padding: 0; 

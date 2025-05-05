@@ -14,8 +14,7 @@ const AboutMe: React.FC = () => {
       <div className='textColumnContainer'>
 
       <div className="textColumn">
-      <h2 className="aboutH2
-      ">About</h2>
+      <h2 className="aboutH2">About</h2>
         <p className="text1">
           As a developer, I strive to create beautiful websites with stunning design and great performance.
           I enjoy creating extremely visual and interactive experiences using any technology that will deliver the best results.
@@ -31,7 +30,7 @@ const AboutMe: React.FC = () => {
       <div className='skillsIconsContainer' id='Skills'>
         <div className='SkillsColumn'>
 
-        <h2>Skills</h2>
+        <h2 className="aboutH2">Skills</h2>
         
         <div className='skillsIcons' >
         <img src={ReactIcon} alt='React Icon'/>

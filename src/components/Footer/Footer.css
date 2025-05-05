@@ -63,7 +63,7 @@
 }
 
 .footerBottom {
-  grid-row: 3; /* abajo */
+  grid-row: 3; 
   display: flex;
   flex-direction: row;
   align-items: center;
