@@ -1,216 +1,194 @@
+
+
 .navbarContainer {
-  display: flex;
+
+  /* Usamos space-between para separar logo de links en desktop */
+  justify-content: space-between; 
   align-items: center;
   position: fixed;
-  scroll-snap-align:inherit ;
+  width: 100%;
   top: 0;
   left: 0;
   margin: 0; 
-  padding: 1rem 12vw; 
+  padding: 1rem 2rem; 
   z-index: 9999;
-  transition: 0.32 ease-in-out;
+  transition: 0.3s ease-in-out;
   letter-spacing: .8px;
-  justify-content: space-between; 
+  background-color: #061618;
+  box-sizing: border-box; /* Asegura que el padding no rompa el ancho del 100% */
+}
 
-  @media (max-width: 1000px) {
+@media (max-width: 1000px) {
+  .navbarContainer {
     padding: 1rem; 
     height: auto;
     flex-direction: column;
-    align-items: flex-start; 
+    /* CAMBIO CLAVE: center en lugar de flex-start para evitar que se vaya a la izquierda */
+    align-items: center; 
+    justify-content: center;
   }
 }
 
+/* ==========================================
+   LOGO SECCIÓN
+   ========================================== */
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #bfccdf;
+  text-shadow: 1px 1px 2px #3a3a3a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+
+.logoContainer h1 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.logo {
+  width: 4vw;
+  aspect-ratio: 9/7;
+  margin-right: 1rem;
+  border-radius: 50%;
+  padding: .25rem;
+}
+
+@media (max-width: 1200px) {
+  .logoContainer {
+    font-weight: 500;
+    font-size: .5rem;
+    flex-direction: column;
+    align-items: center; /* Centrado en tablets */
+  }
+}
+
+@media (max-width: 900px) {
+  .logoContainer {
+    margin-left: 0; /* Eliminado el 15vw que empujaba el logo */
+  }
+}
+
+@media (max-width: 50rem) {
+  .logo {
+    display: none;
+  }
+}
+
+/* ==========================================
+   LINKS Y NAVEGACIÓN
+   ========================================== */
 .links {
   display: flex;
   justify-content: center; 
   align-items: center;
-  text-align: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem; 
+}
 
-  @media (max-width: 1000px) {
-    flex-direction: column; 
-    align-items: flex-start; 
-    margin-top: 1rem; 
-    width: 100%; 
+.navbarContainer a {
+  padding: 0;
+  letter-spacing: .8px;
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.navbarContainer a:hover {
+  opacity: 0.7;
+}
+
+.navbar-link {
+  min-width: 5vw;
+  border-right: .8px solid rgb(33, 55, 88);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  padding: .0625rem;
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  .navbar-link {
+    font-size: .7rem;
+    width: auto;
+    padding: 0 10px;
+  }
+}
+
+/* Estado oculto en Mobile */
+@media (max-width: 1000px) {
+  .links {
     display: none; 
+    flex-direction: column; 
+    align-items: center; /* Centrado de links en vertical */
+    margin-top: 1rem; 
+    width: 100%;
+  }
+
+  .links.show {
+    display: flex;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255,255,255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
   }
 }
 
-.links.show {
-  display: flex;
-  background:  linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255,255,255, 0));
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
- 
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
-}
-            
-      .navbarContainer a{
-        
-        
-        padding: 0;
-        letter-spacing: .8px;
-        color: #f1f1f1;
-        @media (max-width:800px) {
-          
-          margin: 0;
-          letter-spacing: 0;
-          padding: 0;
-          border: none;
-        }
-      }
-      
-      .navbarContainer a:hover{
-        opacity: 1;
-      }
-
-      .navbar-link{
-        
-        min-width: 5vw;
-      
-        border-right: .8px solid  rgb(33, 55, 88);
-    color: #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-style: normal;
-    padding: .0625rem;
-    font-size: 16px;
-    
-    
-    @media (max-width:1200px) {
-      font-weight: 200;
-      font-size: .6rem;
-      width: 4.6875rem;
-      height: 1.5625rem;
-    }
-  }
-  
-  .contactMobile{
-    display: none;
-    min-width: 7vw;
-    height: 32px;
-    color: #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: .8px solid  rgb(33, 55, 88);
-    text-decoration: none;
+/* ==========================================
+   BOTONES Y CONTACTO
+   ========================================== */
+.contactMobile {
+  display: none;
+  min-width: 7vw;
+  height: 32px;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  border: .8px solid rgb(33, 55, 88);
+  text-decoration: none;
   font-weight: 200;
   font-family: "Poppins", serif;
-  padding: .0625rem;
   font-size: 1rem;
-    @media (max-width:62.5rem) {
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: .6rem;
-    }
-  }
-  
-  .logoContainer{
+}
 
+@media (max-width: 1000px) {
+  .contactMobile {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: #bfccdf;
-    text-shadow: 1.5008px -0.8px 1px  #818181;
-    text-shadow: 1px 1px 2px #3a3a3a;
-    font-family:Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-size: 1rem;
-    letter-spacing: 1.5px;
-    
-    @media (max-width:1200px) {
-      font-weight: 500;
-      font-size: .5rem;
-      flex-direction: column;
-      align-items: start;
-    }
-
-    @media (max-width:900px) {
-      margin-left: 15vw;
-    }
+    border: none;
+    font-size: .8rem;
+    margin-top: 1rem;
   }
-
-  .logoContainer h1{
-    font-size: 1.3rem;
-  }
-
-  
-  .logo{
-  width: 4vw;
-  aspect-ratio: 9/7;
-  margin: 0 1rem 0 0;
-  
-  border-radius: 50%;
-  padding: .25rem;
-  @media (max-width: 62.5rem) {
-    
-    width: 3.125rem
-  };  
-
-  @media (max-width:50rem) {
-    display: none;
-  }  
-
-}  
-
-.contactUsBtn{
-  width: 80px;
-  height: 48px;
-}  
-
- 
-
-.social-icon a img {
-	width: 40%;
-	z-index: 1;
-	transition: 0.3s ease-in-out;
-  
-}  
+}
 
 .links button {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
-  padding: 18px 34px;
-  font-size: 1.125rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   margin-left: 18px;
-	position: relative;
-	background-color: transparent;
-	transition: 0.3s ease-in-out;
-  @media (max-width:1200px) {
-    font-weight: 500;
-    font-size: .5rem;
-  }  
-}  
-.links button span {
-  z-index: 1;
-}  
-.links button::before {
-  content: "";
-  width: 0%;
-  height: 100%;
-  position: absolute;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-  z-index: -1;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
   transition: 0.3s ease-in-out;
-}  
+}
+
 .links button:hover {
   color: #121212;
-}  
+  background-color: #fff;
+}
 
-
+/* ==========================================
+   HAMBURGER MENU
+   ========================================== */
 .hamburger-btn {
   display: none;
   background: none;
@@ -218,31 +196,26 @@
   color: white;
   cursor: pointer;
   padding: 0.5rem;
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 1000;
+}
 
-  @media (max-width: 1000px) {
+@media (max-width: 1000px) {
+  .hamburger-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: static; /* El botón fluye con el contenido en mobile */
-    transform: translateY(0);
-    margin-bottom: 1rem; /* Espacio debajo del botón en mobile */
+    margin-bottom: 0.5rem;
   }
 }
 
-.hamburger-btn:hover {
-  opacity: 0.8;
-}
-
+/* ==========================================
+   ANIMACIONES (Mobile links)
+   ========================================== */
 @media (max-width: 800px) {
   .links a {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
   }
 
   .links.show a {
