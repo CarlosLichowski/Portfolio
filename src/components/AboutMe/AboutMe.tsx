@@ -6,15 +6,18 @@ import NodeJs from '../../assets/png/tech/node-icon.png'
 import Github from '../../assets/png/tech/github icon.png'
 import Python from '../../assets/png/tech/python.png'
 import Postgre from '../../assets/png/tech/postgre-icon.png'
+import Perfil from '../../assets/png/perfil.png'
 
 const AboutMe: React.FC = () => {
   return (
     <div className="aboutContainer" id="About">
 
       <div className='textColumnContainer'>
+      <img src={Perfil}/>
 
-      <div className="textColumn">
-      <h2 className="aboutH2">About</h2>
+
+      <div className='textcontainer'>
+      <h2 className="aboutH2">Building Digital Resilience</h2>
         <p className="text1">
           As a developer, I strive to create beautiful websites with stunning design and great performance.
           I enjoy creating extremely visual and interactive experiences using any technology that will deliver the best results.
@@ -26,11 +29,12 @@ const AboutMe: React.FC = () => {
         </p>
       </div>
       </div>
+      
 
       <div className='skillsIconsContainer' id='Skills'>
-        <div className='SkillsColumn'>
+        
 
-        <h2 className="aboutH2">Skills</h2>
+        <h2 className="skillsH2">Technical Arsenal</h2>
         
         <div className='skillsIcons' >
         <img src={ReactIcon} alt='React Icon'/>
@@ -43,7 +47,7 @@ const AboutMe: React.FC = () => {
 
         
         </div>
-        </div>
+        
       </div>
     </div>
   );

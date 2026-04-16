@@ -39,16 +39,7 @@ const NavBar = () => {
 }}>Projects</a>
         </li>
 
-        <li>
 
-
-          <a href="#Skills" onClick={(e) => {
-  e.preventDefault();
-  document.getElementById('Skills')?.scrollIntoView({ behavior: 'smooth' });
-}}>Skills</a>
-
-          
-        </li>
         <li>
 
 

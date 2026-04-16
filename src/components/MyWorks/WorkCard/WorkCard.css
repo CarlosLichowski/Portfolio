@@ -1,147 +1,95 @@
- .workContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 25rem;
-    height: 31.25rem;
-    border: 1px solid #ffffff22;
-    box-shadow: 0 7px 20px 5px #00000088;
-    border-radius: 0.7rem;
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    overflow: hidden;
-    transition: 0.5s all;
-    text-align: center;
-    color: #f1f1f1;
-    @media (max-width: 1000px) {
-      width: 320px;
-      height: 380px;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-      }
-    } 
-
-
-    .workDescription {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-
-    @media (max-width: 1000px) {
-      width: 100%;
-      height: auto;
-      justify-content: center;
-    }
-    
-  }
-
-
+.workContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%; 
+  background: #0E1311;
+  border: 1px solid #23509E;
   
-  .description {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 9rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    list-style: none;
-    background:  linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
-    gap: 1rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-    @media (max-width: 1000px) {
-      padding: 0; 
-      margin: 0;
-      align-items: center; 
-      justify-content: center;
-      text-align: center;
-      height: 5rem;
-      gap: 5px;
-      
-    }
+/* --- Coordenadas del Grid 5x6 (Simétricas) --- */
+
+/* FILA SUPERIOR (Ocupan de la fila 1 a la 4) */
+.div1 { grid-area: 1 / 1 / 4 / 4; } 
+.div2 { grid-area: 1 / 4 / 4 / 6; } 
+
+/* FILA INFERIOR (Ocupan de la fila 4 a la 7) */
+/* Ahora también abarcan 3 filas de alto cada una */
+.div4 { grid-area: 4 / 1 / 7 / 3; } 
+.div3 { grid-area: 4 / 3 / 7 / 6; } 
+
+/* --- Resto de estilos corregidos --- */
+
+.workImageContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.workImage {
+  width: auto;
+  max-width: 85%;
+  max-height: 160px; /* Al ser más largas, pueden tener imágenes más grandes */
+  object-fit: contain;
+}
+
+.CardTitleH2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+.workDescription {
+  width: 100%;
+}
+
+.description {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.workRepository {
+  width: 100%;
+  padding: 1.2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.repositoryBtn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #0b0336, #1c2091);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1000px) {
+  .workContainer {
+    grid-area: auto !important;
+    height: 420px;
+    max-width: 100%;
   }
-  
-  .workImageContainer{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-
-    @media (max-width: 1000px) {
-      padding: 0 0 0 0;  
-      margin: 0;
-      width: 100%;
-      height: 10rem;
-      gap: 0;
-      justify-content: start;
-    }
-  }
-  .workImage {
-    border-radius: 0.3px;
-    width: 7rem;
-    height: auto;
-    text-align: center;
-    object-fit: cover;
-    padding: 3rem 0 0 0 ;
-
-    @media (max-width: 1000px) {
-      padding: 0;
-      margin: 0;
-      height: 7rem;
-      width: 7rem;
-      
-    }
-  }
-
-  .CardTitleH2 {
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0; /* Explicitly set top margin to 0 */
-    margin-bottom: 0; /* You can adjust the bottom margin as needed */
-    @media (max-width: 1000px) {
-      padding: 0;
-      margin: 20px 0 0 0; /* Ensure margin is also 0 on smaller screens */
-      font-size: 1.4rem;
-      
-    }
-  }
-  
-  .repositoryBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.1rem;
-    box-shadow: 0.5px 0.5px 16px 6px #1f11a1bc;
-    text-shadow: 0.5px 0.5px 0.5px #000000;
-    border: 1px solid #31223d;
-    border-radius: 20px;
-    margin: 0.5rem 0 0 0;
-    padding: 0.7rem;
-    background: linear-gradient(to bottom, #0b0336, #1c2091);
-    cursor: pointer;
-
-    @media (max-width: 1000px) {
-      padding: 0; 
-      margin: 0;
-    }
-  } 
-
-
-
+}

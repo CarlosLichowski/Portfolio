@@ -1,54 +1,35 @@
 
-.banner {
-  min-height: 100vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   min-height: calc(100vh - 100px);
-    font-family: "Inter", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 200;
-   font-style: normal;
-    padding: 0;
-    scroll-snap-align: start;
-    @media (max-width: 1400px) {
-      height: auto;
-      min-height: auto;
-      
-    }
+
+
+  .banner{
+    background: #0E1311;
+    background: linear-gradient(317deg, rgba(14, 19, 17, 1) 15%, rgba(8, 12, 11, 1) 50%, rgba(14, 19, 17, 1) 85%);
+    height: 1200px;
+    display: flex;
+    flex-direction: row;
+align-items: center;
+justify-content: center;
+    padding: 0 2rem ;
   }
 
-  .BannerContainer{
-  
-    display: grid;
-    grid-template-columns: 1fr ;
-    gap: 5rem;
-    margin-top: 100px; /* Midiendo el largo del navbar puedo asegurar  que empiece después del navbar poniendole un margin exactamente del largo del navbar */
-    @media (max-width: 1600px) {
-      grid-template-columns: 1fr;
-      height: auto;
-      justify-content: center;
-      gap: 3rem;
-    }
-
-    @media (max-width: 1000px) {
-      margin-top: 0;
-    }
+  .bannerText{
+        display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    
+    
   }
-  .banner .tagline {
-    font-weight: 700;
-    letter-spacing: .8px;
-    padding: 8px 10px;
-   
-    color: #f5f5f5;
-    text-shadow: .5008px 1px 1px #dfdfdf;
-    text-shadow: .5008px -1px 1px #ffffff;
-    background: #004b7a;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 20px;
-    margin-bottom: 16px;
-    display: inline-block;
+
+
+  .bannerImgContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     
+  }
+  .bannerImg{
+    width: 90%
   }
   .banner h1 {
     display: flex;
@@ -60,14 +41,11 @@
     letter-spacing: 1px;
     line-height: 1;
     color: #dfdfdf;
-    
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     text-align: start;
-
-    margin-bottom: 20px;
     display: block;
     text-shadow: 2px 2px 2px rgba(73, 73, 73, 0.986);
     @media (max-width: 1300px) {
@@ -89,11 +67,10 @@
     font-weight: 700;
     letter-spacing: .8px;
     line-height: 1;
-    margin-bottom: 1.5625rem;
     display: block;
     color: #dfdfdf;
     text-shadow: 2px 2px 2px rgba(36, 36, 36, 0.986);
-    margin-bottom: 3rem;
+    
   }
   .banner p {
     color: #B8B8B8;
@@ -101,74 +78,21 @@
     letter-spacing: .8px;
     line-height: 1.5em;
     width: 96%;
-    margin: 1.5rem 0;
+    
 
   }
-  .banner button {
-    color: #fff;
+  .banner a {
+    display: flex;
+    align-items: center;
+    justify-content: start;
     font-weight: 700;
     font-size: 20px;
-    margin-top: 5rem;
     letter-spacing: .8px;
-    display: flex;
-    align-items: center;
-  }
-
-  .BannerColumn1{
-    width: 50%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-around;
-
-    @media (max-width: 1400px) {
-      justify-content: center;
-      margin: 2rem 0 0 0;
-      max-width: 100vw;
-      width: 300px;
-      text-align: center;
-      align-items: center;
-    }
-
-    @media (max-width: 1000px) {
-      margin: 1rem;
-
-    }
-  } 
-
-  .BannerColumn1 h1{
-    margin-top: 1rem;
-    display: flex;
-    
-  }
-
-  .BannerColumn1 p {
-    text-align: start;
+      background: #AAC0AD;
+background: linear-gradient(90deg,rgba(170, 192, 173, 1) 2%, rgba(126, 151, 133, 1) 50%, rgba(53, 84, 67, 1) 100%);
+    color: black;
   }
 
 
-.BannerColumn2 
-{
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-   color: #004b7a;
-}
 
-.BannerImg{
-  width: 400px;
-  margin:2rem;
 
-  @media (max-width: 1400px) {
-    margin: 0;
-    max-width: 100vw;
-    width: 250px;
-    text-align: center;
-    align-items: center;
-  }
-}
