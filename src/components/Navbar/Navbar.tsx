@@ -5,10 +5,13 @@ import { Menu, X } from 'lucide-react';
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleScroll = (id: string) => {
+    setIsMenuOpen(false); // Cierra el menú en móvil al hacer click
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -21,45 +24,30 @@ const NavBar = () => {
         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* <div className='logoContainer'>
+      <div className='logoContainer'>
         <h1>Carlos J. Lichowski</h1>
-      </div> */}
+      </div>
 
       <ul className={`links ${isMenuOpen ? 'show' : ''}`}>
         <li>
-        <a href="#home" onClick={(e) => {
-  e.preventDefault();
-  document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
-}}>Home</a>
+          <a href="#home" onClick={(e) => { e.preventDefault(); handleScroll('home'); }}>Home</a>
         </li>
         <li>
-          <a href="#Projects" onClick={(e) => {
-  e.preventDefault();
-  document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' });
-}}>Projects</a>
+          <a href="#Projects" onClick={(e) => { e.preventDefault(); handleScroll('Projects'); }}>Projects</a>
         </li>
-
-
         <li>
-
-
-          <a href="#About" onClick={(e) => {
-  e.preventDefault();
-  document.getElementById('About')?.scrollIntoView({ behavior: 'smooth' });
-}}>About</a>
+          <a href="#About" onClick={(e) => { e.preventDefault(); handleScroll('About'); }}>About</a>
         </li>
-
         <li>
-
-
-<a href="#Contact" onClick={(e) => {
-e.preventDefault();
-document.getElementById('Contact')?.scrollIntoView({ behavior: 'smooth' });
-}}>Contact</a>
-</li>
+          <a href="#Contact" onClick={(e) => { e.preventDefault(); handleScroll('Contact'); }}>Contact</a>
+        </li>
       </ul>
+
+      {/* Este div equilibra el espacio del logo para centrar los links */}
+      <button>EN | ES</button>
     </nav>
   );
 };
+
 
 export default NavBar;

@@ -7,6 +7,7 @@
   import Python from '../../assets/png/tech/python.png'
   import Postgre from '../../assets/png/tech/postgre-icon.png'
   import Perfil from '../../assets/png/perfil.png'
+  import Firebase from '../../assets/png/tech/firebase.png'
 
   const AboutMe: React.FC = () => {
     return (
@@ -43,6 +44,7 @@
           <img src={Postgre} alt='Postgre Icon'/>
           <img src={Github} alt='Github Icon'/>
           <img src={Bootstrap} alt='Bootstrap Icon'/>
+          <img src={Firebase} alt='Firebase Icon'/>
 
 
           
