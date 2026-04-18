@@ -1,31 +1,45 @@
+/* =========================
+   CARD BASE
+========================= */
+
 .workContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   background: #0E1311;
   border: 1px solid #23509E;
-  
   border-radius: 0.7rem;
   overflow: hidden;
   transition: 0.3s ease-in-out;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* --- Coordenadas del Grid 5x6 (Simétricas) --- */
+.workContainer:hover {
+  transform: translateY(-5px) scale(1.01);
+}
 
-/* FILA SUPERIOR (Ocupan de la fila 1 a la 4) */
-.div1 { grid-area: 1 / 1 / 4 / 4; } 
-.div2 { grid-area: 1 / 4 / 4 / 6; } 
+/* =========================
+   GRID SOLO DESKTOP
+========================= */
 
-/* FILA INFERIOR (Ocupan de la fila 4 a la 7) */
-/* Ahora también abarcan 3 filas de alto cada una */
-.div4 { grid-area: 4 / 1 / 7 / 3; } 
-.div3 { grid-area: 4 / 3 / 7 / 6; } 
+@media (min-width: 1200px) {
 
-/* --- Resto de estilos corregidos --- */
+.workContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 750px;
+  height: 550px;
+}
+}
+
+
+/* =========================
+   IMAGE
+========================= */
 
 .workImageContainer {
   flex: 1;
@@ -33,22 +47,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .workImage {
-  width: auto;
-  max-width: 85%;
-  max-height: 160px; /* Al ser más largas, pueden tener imágenes más grandes */
+  width: 100%;
+  max-width: 250px;
   object-fit: contain;
 }
 
+/* =========================
+   TITLE
+========================= */
+
 .CardTitleH2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
   font-family: "Inter", sans-serif;
   color: #fff;
+  text-align: center;
 }
+
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 .workDescription {
   width: 100%;
@@ -58,26 +81,32 @@
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  padding: 0.8rem 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
   margin: 0;
   background: rgba(255, 255, 255, 0.03);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #aaa;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
 .workRepository {
   width: 100%;
-  padding: 1.2rem 0;
+  padding: 1rem 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
 }
 
 .repositoryBtn {
-  padding: 0.6rem 1.4rem;
-  border-radius: 25px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
   background: linear-gradient(to bottom, #0b0336, #1c2091);
   color: white;
   border: 1px solid rgba(255,255,255,0.1);
@@ -86,10 +115,32 @@
   transition: 0.3s;
 }
 
-@media screen and (max-width: 1000px) {
+.repositoryBtn:hover {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) {
   .workContainer {
-    grid-area: auto !important;
-    height: 420px;
-    max-width: 100%;
+    min-height: 400px;
+  }
+
+  .CardTitleH2 {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 767px) {
+  .workContainer {
+    height: auto;
   }
 }

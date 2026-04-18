@@ -96,17 +96,19 @@ const MyWorks: React.FC = () => {
       initial="hidden"
       animate={mainControls}
     >
-      <h2 className='worksmaincontainerh2'>Projects</h2>
+      <h2 className='worksmaincontainerh2'>Work</h2>
+      <button type='select'>AllWork</button>
+      <select>asd</select>
       <div className="worksContainer">
         {projectData.map((project, index) => (
           <WorkCard key={index} {...project} />
         ))}
       </div>
 
-      <button className='MoreProyectsBtn'><a href="#Contact" onClick={(e) => {
-e.preventDefault();
-document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' });
-}}>MoreProyects</a></button>
+        <button className='MoreProyectsBtn'><a href="#Contact" onClick={(e) => {
+  e.preventDefault();
+  document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' });
+  }}>MoreProyects</a></button>
            
     </motion.div>
   );

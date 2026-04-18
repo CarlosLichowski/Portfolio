@@ -1,98 +1,115 @@
+.banner {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* 🔥 centra TODO el contenido */
+  align-items: center;
+  padding: 2rem;
+  background: #ffffff;
+}
 
 
 
-  .banner{
-    background: #0E1311;
-    background: linear-gradient(317deg, rgba(14, 19, 17, 1) 15%, rgba(8, 12, 11, 1) 50%, rgba(14, 19, 17, 1) 85%);
-    height: 1200px;
-    display: flex;
+/* 🔥 CONTENEDOR INTERNO (CLAVE) */
+.bannerContent {
+  width: 100%;
+  max-width: 1200px; /* 🔥 evita que se desparrame */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* TEXT */
+
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 centrado en mobile */
+  gap: 1rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* IMAGE */
+
+.bannerImgContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.bannerImg {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* TEXT STYLES */
+
+.banner h1 {
+  font-size: 2.2rem;
+  line-height: 1.1;
+  color: #000000;
+}
+
+.banner h3 {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.banner p {
+  font-size: 1rem;
+  color: #000000;
+}
+
+/* BUTTON */
+
+.banner a {
+  display: inline-flex;
+  margin: 15px;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(170,192,173,1) 2%, rgba(126,151,133,1) 50%, rgba(53,84,67,1) 100%);
+  color: black;
+  text-decoration: none;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) {
+  .bannerContent {
     flex-direction: row;
-align-items: center;
-justify-content: center;
-    padding: 0 2rem ;
-  }
-
-  .bannerText{
-        display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-around;
-    
-    
-  }
-
-
-  .bannerImgContainer{
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-     
   }
-  .bannerImg{
-    width: 90%
+
+  .bannerText {
+    align-items: flex-start;
+    text-align: left;
   }
+
   .banner h1 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    font-size: 3rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+  .banner h1 {
     font-size: 3.5rem;
-    font-family: "Open Sans", serif;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 1;
-    color: #dfdfdf;
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    text-align: start;
-    display: block;
-    text-shadow: 2px 2px 2px rgba(73, 73, 73, 0.986);
-    @media (max-width: 1300px) {
-      font-size: 2.5rem;
-    }
-
-    
-
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-  
   }
 
-  .banner h3{
-    font-family: "Open Sans", serif;
-    font-size: 1.625rem;
-    font-weight: 700;
-    letter-spacing: .8px;
-    line-height: 1;
-    display: block;
-    color: #dfdfdf;
-    text-shadow: 2px 2px 2px rgba(36, 36, 36, 0.986);
-    
-  }
-  .banner p {
-    color: #B8B8B8;
-    font-size: 1.425rem;
-    letter-spacing: .8px;
-    line-height: 1.5em;
-    width: 96%;
-    
 
-  }
-  .banner a {
-    display: flex;
+  .BannerBtnContainer{
+  display: flex;
+  flex-direction: wrap;
     align-items: center;
-    justify-content: start;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: .8px;
-      background: #AAC0AD;
-background: linear-gradient(90deg,rgba(170, 192, 173, 1) 2%, rgba(126, 151, 133, 1) 50%, rgba(53, 84, 67, 1) 100%);
-    color: black;
-  }
-
-
-
-
+    justify-content: space-around;
+    gap: 2rem;
+}
+}

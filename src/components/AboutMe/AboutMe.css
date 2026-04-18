@@ -1,214 +1,199 @@
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+
 .aboutContainer {
-      background: #0E1311;
-    background: linear-gradient(317deg, rgba(14, 19, 17, 1) 15%, rgba(8, 12, 11, 1) 50%, rgba(14, 19, 17, 1) 85%);
-  scroll-snap-align: start;
-  max-width: 100%;;
-  height: 1200px;
+  width: 100%;
+  padding: 5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  gap:5rem;
-padding: 5rem 2rem;
-  color: #f1f1f1;
+  gap: 5rem;
+  background: #ffffff;
+  color: #000000;
   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
+}
 
-  }
+/* =========================
+   HERO (IMAGEN + TEXTO)
+========================= */
 
-  .skillsIconsContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    
-  }
+.textColumnContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 
-  .SkillsColumn{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    height: 700px;
-    width: 100%;
-  }
+  /* 🔥 Animación entrada */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
 
+/* IMAGEN */
+.textColumnContainer img {
+  width: 100%;
+  max-width: 280px;
+  object-fit: contain;
 
+  /* 🔥 efecto pro */
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
 
-  .skillsIcons{
-    display: flex;
+.textColumnContainer img:hover {
+  transform: scale(1.05) translateY(-5px);
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
+}
+
+/* TEXTO */
+.textcontainer {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.aboutH2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: #000000;
+  background: linear-gradient(90deg, #000000, #2e2e2e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text1,
+.text2 {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.text1 {
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skillsIconsContainer {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  /* animación */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.skillsH2 {
+  font-size: 1.6rem;
+}
+
+/* ICONOS */
+.skillsIcons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.skillsIcons img {
+  width: 2.5rem;
+  transition: all 0.3s ease;
+  filter: grayscale(40%) brightness(0.9);
+}
+
+.skillsIcons img:hover {
+  transform: scale(1.2) translateY(-5px);
+  filter: grayscale(0%) brightness(1.2);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) {
+  .textColumnContainer {
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     gap: 3rem;
-    flex-wrap: wrap;
-    width: 100%;
+  }
+
+  .textColumnContainer img {
+    max-width: 320px;
+  }
+
+  .textcontainer {
+    text-align: left;
+  }
+
+  .aboutH2 {
+    font-size: 2.2rem;
+  }
+
+  .text1,
+  .text2 {
+    font-size: 1rem;
   }
 
   .skillsIcons img {
-    width: 6rem;
-    height: auto;
+    width: 3.2rem;
+  }
+}
 
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+  .textColumnContainer {
+    gap: 5rem;
   }
 
-  @media screen and (max-width: 2000px) {
-    .aboutContainer {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap:0rem;
-        margin: 2rem 0;
-    
-      }
-  }
-  
-  @media screen and (max-width: 1600px) {
-    .aboutContainer {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-  
-  @media screen and (max-width: 800px) {
-    .aboutContainer {
-      margin: 1.5rem;
-      width: 80%;
-      text-align: center;
-      justify-content: center;
-      padding: 5rem 0;
-    }
-  }
-  
-
-  
-  @media screen and (max-width: 1600px) {
-    .aboutH1 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-  }
-  
-  .textColumnContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items:center;
-    font-size: 1.1rem;
-    letter-spacing: 0.125rem;
-    width: 100%;
-    line-height: 2rem;
-  }
-  
-  .textColumn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    height: 700px;
-    width: 800px;
+  .textColumnContainer img {
+    max-width: 380px;
   }
 
-  .aboutH2{
-    text-align: center;
+  .aboutH2 {
+    font-size: 2.6rem;
   }
 
-  .skillsH2{
-    text-align: center;
-    margin: 0 0 10rem 0;
-  }
-    
-  
-  @media screen and (max-width: 1600px) {
-    .textColumn {
-      font-size: 1.8rem;
-
-    }
-  }
-  
-  @media screen and (max-width: 800px) {
-
-    .aboutContainer{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .textColumnContainer {
-      font-size: 1rem;
-      width: 80%;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 6rem;
-    }
-
-    .textColumn{
-      width: 80%;
-      align-items: center;
-      justify-content: center;
-      
-    }
-
-    .SkillsColumnContainer{
-        margin: 2rem 0 0 0;
-        font-size: 1rem;
-        width: 80%;
-        align-items: center;
-        justify-content: center;
-      
-    }
-    .SkillsColumn{
-
-      width: 80%;
-      align-items: center;
-      justify-content: center;
-    }
-
-  }
-  
   .text1,
   .text2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    text-align: start;
+    color: #000000;
     font-size: 1.1rem;
-    width: 50rem;
-    margin: 0 0 1.25rem 0;
-  }
-  
-  .text2 {
-    margin: 0;
-  }
-  
-  @media screen and (max-width: 1600px) {
-    .text1,
-    .text2 {
-      font-size: 1.8rem;
-    }
-  }
-  
-  @media screen and (max-width: 800px) {
-    .text1,
-    .text2 {
-      font-size: 1rem;
-      width: 100%;
-      margin: 0;
-    }
-
-    .skillsIcons{
-      gap: 1rem;
-      width: 100vw;
-      flex-wrap: wrap;
-    }
-
-    .skillsIcons img{
-      width: 2.5rem;
-    }
   }
 
-  
-  
+  .skillsIcons img {
+    width: 4rem;
+  }
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
