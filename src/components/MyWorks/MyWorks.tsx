@@ -97,8 +97,8 @@ const MyWorks: React.FC = () => {
       animate={mainControls}
     >
       <h2 className='worksmaincontainerh2'>Work</h2>
-      <button type='select'>AllWork</button>
-      <select>asd</select>
+      <button >AllWork</button>
+      
       <div className="worksContainer">
         {projectData.map((project, index) => (
           <WorkCard key={index} {...project} />
