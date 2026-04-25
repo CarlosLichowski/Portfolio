@@ -1,23 +1,21 @@
 /* =========================
-   RESET CLAVE
+   RESET & BASE (Mobile First)
 ========================= */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-/* =========================
-   BASE (MOBILE FIRST)
-========================= */
 
 .worksmaincontainer {
   width: 100%;
-  max-width: 1400px; /* 🔥 evita overflow en desktop */
+  max-width: 1400px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f7f9fb;
+  background-color: #ffffff;
   color: #000000;
   padding: 4rem 1.5rem;
   gap: 3rem;
@@ -29,80 +27,112 @@
   text-align: center;
 }
 
-.worksContainer {
+/* =========================
+   FEATURED SECTION (SPLIT-SCREEN)
+========================= */
+.featured-section {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.split-screen-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stacked en móvil */
+  align-items: center;
+  gap: 2rem;
+}
+
+.split-image {
+  flex: 1;
+  width: 100%;
+}
+
+.split-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.split-content {
+  flex: 1;
+  text-align: center;
+}
+
+.split-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   ARCHIVE SECTION (GRID)
+========================= */
+.archive-section {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.archive-title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.worksContainer {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna en móvil */
   gap: 2rem;
   width: 100%;
 }
 
-/* Botón */
+/* =========================
+   BOTÓN
+========================= */
 .MoreProyectsBtn {
-  display: inline-flex;
-  align-items: center;
+  margin-top: 2rem;
   font-weight: 700;
-  font-size: 1rem;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(90deg, rgba(170,192,173,1) 2%, rgba(126,151,133,1) 50%, rgba(53,84,67,1) 100%);
-  color: black;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(90deg, #aac0ad 2%, #7e9785 50%, #355443 100%);
+  color: white;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
+.MoreProyectsBtn:hover {
+  transform: scale(1.05);
+}
 
 /* =========================
-   TABLET (>=768px)
+   TABLET & DESKTOP RESPONSIVE
 ========================= */
 
 @media (min-width: 768px) {
-  .worksmaincontainerh2 {
-    font-size: 2.5rem;
+  /* Layout del Featured */
+  .split-screen-container {
+    flex-direction: row; /* Horizontal en desktop */
+    text-align: left;
+    gap: 4rem;
+  }
+  
+  .split-content {
+    text-align: left;
   }
 
+  /* Grid del Archive */
   .worksContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
   }
 }
 
-
-/* =========================
-   DESKTOP (>=1200px)
-========================= */
-
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .worksmaincontainerh2 {
     font-size: 3rem;
-    
-  }
-  .worksmaincontainer{
-     margin: 0 ;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-
-
-       min-width: 100%;
-
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffff;
-  color: #000000;
-  padding: 4rem 1.5rem;
-  gap: 3rem;
-
   }
 
-
+  /* Grid del Archive (3 columnas para pantallas grandes) */
   .worksContainer {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
   }
-
 }

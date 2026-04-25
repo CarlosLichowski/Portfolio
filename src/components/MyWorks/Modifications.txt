@@ -1,0 +1,33 @@
+temporizador largo (6-8 segundos) y asegúrate de que,
+ al pasar el cursor sobre la sección (onMouseEnter), el autoslide se detenga (pause).
+
+ Lazy Loading: Para las imágenes de los proyectos, usa loading="lazy" (o componentes de imagen optimizados). No cargues todas las imágenes de los proyectos del grid si el usuario no ha llegado a verlas.
+
+ Flexibilidad CSS: Usa display: grid para el contenedor de las cards. Te permitirá que, sin cambiar el HTML, las cards se ajusten automáticamente de 1, 2 o 3 columnas dependiendo del tamaño de pantalla.
+
+ aspect-ratio es una de las propiedades más potentes y sencillas que nos ha dado el CSS moderno. Olvídate de los "hacks" antiguos con padding-bottom (que eran un dolor de cabeza matemático); ahora el navegador hace el trabajo por ti.
+
+¿Cómo funciona?
+Es básicamente una regla de proporción. Tú le dices al navegador: "Quiero que el ancho y el alto mantengan siempre esta relación".
+
+La sintaxis es: aspect-ratio: ancho / alto;
+
+Si pones aspect-ratio: 16 / 9;:
+
+Si el ancho del contenedor es de 1600px, el navegador calcula automáticamente que el alto debe ser 900px.
+
+Si el ancho cambia a 800px (porque achicaste la pantalla), el navegador calcula automáticamente que el alto debe ser 450px.
+
+
+Recomendaciones de proporciones (Ratios):
+1 / 1 (Cuadrado): Muy limpio, ideal para un estilo minimalista y muy ordenado.
+
+4 / 3 (Estándar): Un rectángulo clásico, se siente "seguro" y profesional.
+
+16 / 9 (Panorámico): Se siente más cinematográfico y moderno, ideal si tus capturas de pantalla son del navegador.
+
+Consejo PRO: Si usas aspect-ratio, ya no necesitas definir height: 250px. El alto se calculará automáticamente según el ancho que le asigne tu grid. Esto hace que tu diseño sea 100% responsivo sin esfuerzo extra.
+
+flex-grow: 1 en la descripción: Esto es un truco muy profesional. Si un proyecto tiene una descripción un poco más larga que otro, este código ayuda a que el contenedor de texto se adapte, asegurando que todos tus botones de "Repository" queden alineados perfectamente al final de la tarjeta.
+
+Consistencia: El aspect-ratio ahora vive en el workImageContainer globalmente. Así, tanto en móvil como en desktop, la forma de la imagen será siempre la misma (16:9), dando una sensación de mucho orden.
