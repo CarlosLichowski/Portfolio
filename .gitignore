@@ -7,6 +7,19 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+.adal/
+.agents/
+.augment/
+.bob/
+.claude/
+.codebuddy/
+.commandcode/
+.continue/
+.cortex/
+.crush/
+.factory/
+.goose/
+
 node_modules
 dist
 dist-ssr
