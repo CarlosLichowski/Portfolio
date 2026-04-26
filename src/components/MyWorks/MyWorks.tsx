@@ -1,16 +1,17 @@
 import React, { useRef, useEffect } from 'react';
 import './MyWorks.css';
+import { useInView, useAnimation, motion } from 'framer-motion';
+import WorkCard from './WorkCard/WorkCard';
+
+// Assets
 import Rickandmorty from '../../assets/img/MyWork/rickandmorty.png';
 import Innova from '../../assets/img/MyWork/Innova.png';
-// import Spotify from '../../assets/img/MyWork/spotify.png';
 import codigochef from '../../assets/img/MyWork/codigochef.png';
-import WorkCard from './WorkCard/WorkCard';
-import { useInView, useAnimation, motion } from 'framer-motion';
-import ramosmejia from '../../assets/img/MyWork/ramos mejia logo.png'
+import ramosmejia from '../../assets/img/MyWork/ramos mejia logo.png';
 
 const MyWorks: React.FC = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px 0px' }); 
+  const isInView = useInView(ref, { once: true, margin: '-50px 0px' });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const MyWorks: React.FC = () => {
   const projectData = [
     {
       title: 'Innova',
-      gridClass: 'div1', 
+      gridClass: 'div1',
       description: ['E-commerce', 'M.E.R.N'],
       imageSrc: Innova,
       altText: 'Innova',
@@ -47,20 +48,7 @@ const MyWorks: React.FC = () => {
         transition: { duration: 0.8, delay: 0.4 },
       },
     },
-    //     {
-    //   title: 'Spotify Clone',
-    //   gridClass: 'div2',
-    //   description: ['ReactJs', 'Spotify Api'],
-    //   imageSrc: Spotify,
-    //   altText: 'Spotify',
-    //   repoLink: 'https://github.com/Carlicho/SpotifyClone2',
-    //   animationProps: {
-    //     initial: { opacity: 0, x: 50 },
-    //     animate: { opacity: 1, x: 0 },
-    //     transition: { duration: 0.8, delay: 0.4 },
-    //   },
-    // },
-     {
+    {
       title: 'RickandMorty Api',
       gridClass: 'div3',
       description: ['M.E.R.N'],
@@ -96,20 +84,25 @@ const MyWorks: React.FC = () => {
       initial="hidden"
       animate={mainControls}
     >
-      <h2 className='worksmaincontainerh2'>Work</h2>
-      <button >AllWork</button>
+      <h2 className='worksmaincontainerh2'>Projects</h2>
       
+
       <div className="worksContainer">
         {projectData.map((project, index) => (
           <WorkCard key={index} {...project} />
         ))}
       </div>
 
-        <button className='MoreProyectsBtn'><a href="#Contact" onClick={(e) => {
-  e.preventDefault();
-  document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' });
-  }}>MoreProyects</a></button>
-           
+      <button className='MoreProjectsBtn'
+                 
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('Contact')?.scrollIntoView({ behavior: 'smooth' });
+          }}>
+
+          More Projects
+       
+      </button>
     </motion.div>
   );
 };

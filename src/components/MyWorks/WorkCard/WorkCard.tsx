@@ -1,10 +1,11 @@
 import React from 'react';
 import './WorkCard.css';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // 1. Importa el hook
 
 interface WorkCardProps {
   title: string;
-  gridClass: string; // Recibimos la posición del grid
+  gridClass: string;
   description: string[];
   imageSrc: string;
   altText: string;
@@ -23,6 +24,8 @@ const WorkCard: React.FC<WorkCardProps> = ({
   visitLink,
   animationProps,
 }) => {
+  const { t } = useTranslation(); // 2. Inicializa el hook
+
   return (
     <motion.div className={`workContainer ${gridClass}`} {...animationProps}>
       <div className='workImageContainer'>
@@ -41,12 +44,14 @@ const WorkCard: React.FC<WorkCardProps> = ({
       <div className='workRepository'>
         {repoLink && (
           <a href={repoLink} target="_blank" rel="noopener noreferrer">
-            <button className="repositoryBtn">Repository</button>
+            {/* 3. Traducción de botones */}
+            <button className="repositoryBtn">{t('work.repo')}</button>
           </a>
         )}
         {visitLink && (
           <a href={visitLink} target="_blank" rel="noopener noreferrer">
-            <button className="repositoryBtn">Visit Page</button>
+            {/* 3. Traducción de botones */}
+            <button className="repositoryBtn">{t('work.visit')}</button>
           </a>
         )}
       </div>

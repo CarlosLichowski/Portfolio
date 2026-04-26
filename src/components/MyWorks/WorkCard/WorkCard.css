@@ -9,12 +9,12 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  background: #0E1311;
-  border: 1px solid #23509E;
+  background: #ffffff;
+  border: 2px solid #003e97;
   border-radius: 0.7rem;
   overflow: hidden;
   transition: 0.3s ease-in-out;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 15px #003e97;
 }
 
 .workContainer:hover {
@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 750px;
+  width: 450px;
   height: 550px;
 }
 }
