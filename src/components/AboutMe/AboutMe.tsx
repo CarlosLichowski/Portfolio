@@ -25,7 +25,7 @@ import { useTranslation } from 'react-i18next';
       </div>
       
       <div className='skillsIconsContainer' id='Skills'>
-        <h2 className="skillsH2">{t('about.skills')}</h2>
+        <h2 className="skillsH2">{t('aboutPage.skills')}</h2>
         <div className='skillsIcons' >
           <img src={ReactIcon} alt='React Icon'/>
           <img src={Python} alt='Python Icon'/>
