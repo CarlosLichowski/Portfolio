@@ -8,36 +8,25 @@
   import Postgre from '../../assets/png/tech/postgre-icon.png'
   import Perfil from '../../assets/png/perfil.png'
   import Firebase from '../../assets/png/tech/firebase.png'
+import { useTranslation } from 'react-i18next';
 
   const AboutMe: React.FC = () => {
-    return (
-      <div className="aboutContainer" id="About">
+  const { t } = useTranslation();
 
-        <div className='textColumnContainer'>
-        <img src={Perfil}/>
-
-
+  return (
+    <div className="aboutContainer" id="About">
+      <div className='textColumnContainer'>
+        <img src={Perfil} alt="Perfil"/>
         <div className='textcontainer'>
-        <h2 className="aboutH2">Building Digital Resilience</h2>
-          <p className="text1">
-            As a developer, I strive to create beautiful websites with stunning design and great performance.
-            I enjoy creating extremely visual and interactive experiences using any technology that will deliver the best results.
-          </p>
-
-          <p className="text2">
-            Having a background of 10 years experience in a hospital, I also developed my soft skills.
-            I consider myself a proactive listener and a good team worker.
-          </p>
+          <h2 className="aboutH2">{t('aboutPage.title')}</h2>
+          <p className="text1">{t('aboutPage.text1')}</p>
+          <p className="text2">{t('aboutPage.text2')}</p>
         </div>
-        </div>
-        
-
-        <div className='skillsIconsContainer' id='Skills'>
-          
-
-          <h2 className="skillsH2">Technical Arsenal</h2>
-          
-          <div className='skillsIcons' >
+      </div>
+      
+      <div className='skillsIconsContainer' id='Skills'>
+        <h2 className="skillsH2">{t('aboutPage.skills')}</h2>
+        <div className='skillsIcons' >
           <img src={ReactIcon} alt='React Icon'/>
           <img src={Python} alt='Python Icon'/>
           <img src={NodeJs} alt='NodeJs Icon'/>
@@ -45,14 +34,9 @@
           <img src={Github} alt='Github Icon'/>
           <img src={Bootstrap} alt='Bootstrap Icon'/>
           <img src={Firebase} alt='Firebase Icon'/>
-
-
-          
-          </div>
-          
         </div>
       </div>
-    );
-  };
-
-  export default AboutMe;
+    </div>
+  );
+};
+export default AboutMe;

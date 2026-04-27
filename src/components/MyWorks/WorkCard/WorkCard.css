@@ -4,6 +4,7 @@
 .workContainer {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   background: #ffffff;
   border: 1px solid #23509E;
   border-radius: 0.7rem;
@@ -11,6 +12,18 @@
   transition: all 0.3s ease-in-out;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   height: 100%; /* Permite que la tarjeta llene el espacio del Grid */
+=======
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 2px solid #003e97;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 5px 15px #003e97;
+>>>>>>> a3aa62b46adb394db04dd673ac029c5239e6273e
 }
 
 .workContainer:hover {
@@ -21,6 +34,26 @@
 /* =========================
    IMAGE (Proporción constante)
 ========================= */
+<<<<<<< HEAD
+=======
+
+@media (min-width: 1200px) {
+
+.workContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 550px;
+}
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+>>>>>>> a3aa62b46adb394db04dd673ac029c5239e6273e
 .workImageContainer {
   width: 100%;
   aspect-ratio: 4 / 3; /* Esto garantiza que todas las tarjetas tengan la misma forma */

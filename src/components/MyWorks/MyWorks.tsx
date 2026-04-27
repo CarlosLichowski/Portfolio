@@ -10,7 +10,7 @@ import codigochef from '../../assets/img/MyWork/codigochef.png';
 import ramosmejia from '../../assets/img/MyWork/ramos mejia logo.png';
 
 const MyWorks: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [ setCurrentIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px 0px' });
   const mainControls = useAnimation();
@@ -42,6 +42,75 @@ const MyWorks: React.FC = () => {
     if (isInView) mainControls.start('visible');
   }, [isInView, mainControls]);
 
+  const projectData = [
+    {
+      title: 'Innova',
+      gridClass: 'div1', 
+      description: ['E-commerce', 'M.E.R.N'],
+      imageSrc: Innova,
+      altText: 'Innova',
+      repoLink: 'https://github.com/Carlicho/Innova-Render',
+      animationProps: {
+        initial: { opacity: 0, x: -50 },
+        animate: { opacity: 1, x: 0 },
+        transition: { duration: 0.8, delay: 0.2 },
+      },
+    },
+    {
+      title: 'Laboratorio Ramos Mejia',
+      gridClass: 'div2',
+      description: ['ReactJs', 'firebase'],
+      imageSrc: ramosmejia,
+      altText: 'ramosmejia',
+      visitLink: 'https://labramos.web.app/',
+      repoLink: 'https://labramos.web.app/',
+      animationProps: {
+        initial: { opacity: 0, x: 50 },
+        animate: { opacity: 1, x: 0 },
+        transition: { duration: 0.8, delay: 0.4 },
+      },
+    },
+    //     {
+    //   title: 'Spotify Clone',
+    //   gridClass: 'div2',
+    //   description: ['ReactJs', 'Spotify Api'],
+    //   imageSrc: Spotify,
+    //   altText: 'Spotify',
+    //   repoLink: 'https://github.com/Carlicho/SpotifyClone2',
+    //   animationProps: {
+    //     initial: { opacity: 0, x: 50 },
+    //     animate: { opacity: 1, x: 0 },
+    //     transition: { duration: 0.8, delay: 0.4 },
+    //   },
+    // },
+     {
+      title: 'RickandMorty Api',
+      gridClass: 'div3',
+      description: ['M.E.R.N'],
+      imageSrc: Rickandmorty,
+      altText: 'Rickandmorty',
+      repoLink: 'https://github.com/Carlicho/RickandMorty',
+      animationProps: {
+        initial: { opacity: 0, y: 50 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.8, delay: 0.5 },
+      },
+    },
+    {
+      title: 'CodigoChef',
+      gridClass: 'div4',
+      description: ['Restaurant', 'ReactJs'],
+      imageSrc: codigochef,
+      altText: 'Restaurant web',
+      visitLink: 'https://codigochef.netlify.app/',
+      animationProps: {
+        initial: { opacity: 0, y: 50 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.8, delay: 0.6 },
+      },
+    },
+  ];
+
   return (
     <motion.div
       ref={ref}
@@ -51,45 +120,19 @@ const MyWorks: React.FC = () => {
       animate={mainControls}
     >
       <h2 className='worksmaincontainerh2'>Work</h2>
+      <button >AllWork</button>
+      
+      <div className="worksContainer">
+        {projectData.map((project, index) => (
+          <WorkCard key={index} {...project} />
+        ))}
+      </div>
 
-      {/* --- SECCIÓN FEATURED (SPLIT-SCREEN) --- */}
-      <section className="featured-section">
-        <AnimatePresence mode="wait">
-          <motion.div 
-            key={currentIndex}
-            className="split-screen-container"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="split-image">
-              <img src={featuredProjects[currentIndex].imageSrc} alt={featuredProjects[currentIndex].altText} />
-            </div>
-            <div className="split-content">
-              <h3>{featuredProjects[currentIndex].title}</h3>
-              <ul>
-                {featuredProjects[currentIndex].description.map((desc, i) => <li key={i}>{desc}</li>)}
-              </ul>
-              {/* Aquí puedes añadir botones específicos para el destacado */}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </section>
-
-      {/* --- SECCIÓN ARCHIVE (GRID DE CARDS) --- */}
-      <section className="archive-section">
-        <h3 className='archive-title'>Archive</h3>
-        <div className="worksContainer">
-          {archiveProjects.map((project, index) => (
-            <WorkCard key={index} {...project} animationProps={{ initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } }} />
-          ))}
-        </div>
-      </section>
-
-      <button className='MoreProyectsBtn' onClick={() => document.getElementById('Contact')?.scrollIntoView({ behavior: 'smooth' })}>
-        Contact Me
-      </button>
+        <button className='MoreProyectsBtn'><a href="#Contact" onClick={(e) => {
+  e.preventDefault();
+  document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' });
+  }}>MoreProyects</a></button>
+           
     </motion.div>
   );
 };

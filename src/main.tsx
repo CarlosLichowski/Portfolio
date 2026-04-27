@@ -1,10 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+// main.tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+// Importa el archivo directamente para ejecutar el código de configuración
+import i18n from './i18n/i18n';
+
+i18n; // Silencia el error de "never read"
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
-)
+  </React.StrictMode>
+);

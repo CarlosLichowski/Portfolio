@@ -1,3 +1,6 @@
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+   ========================================== */
 .navbarContainer {
   position: fixed;
   top: 0;
@@ -9,22 +12,19 @@
   padding: 1rem 2rem;
   z-index: 9999;
   transition: 0.3s ease-in-out;
-  letter-spacing: .8px;
   background-color: #f7f9fb;
-  border-bottom: 2px solid #23509E;
+  border-bottom: 2px solid #003e97;
   box-sizing: border-box;
   width: 100%;
 }
 
 /* ==========================================
-   LOGO SECCIÓN
+   LOGO
    ========================================== */
 .logoContainer {
-  display: flex;
-  flex: 1; /* Ocupa el espacio de la izquierda */
-  align-items: center;
-  color: #000000;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #003e97;
+  font-family: Arial, sans-serif;
+  flex: 0 0 auto;
 }
 
 .logoContainer h1 {
@@ -34,11 +34,21 @@
 }
 
 /* ==========================================
-   LINKS Y NAVEGACIÓN
+   CONTENEDOR DERECHO (Enlaces + Idioma)
+   ========================================== */
+.nav-right-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  flex: 1;
+}
+
+/* ==========================================
+   LINKS DE NAVEGACIÓN
    ========================================== */
 .links {
   display: flex;
-  flex: 2; /* Mayor prioridad para estar al centro */
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -47,24 +57,55 @@
   padding: 0;
 }
 
-.nav-spacer {
-  flex: 1; /* Ocupa el mismo espacio que el logo a la derecha */
-  display: flex;
-  justify-content: flex-end;
-}
-
 .navbarContainer a {
+  padding: 0.5rem;
   text-decoration: none;
   color: #000000;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
   transition: 0.3s;
-  font-size: 1rem;
+  border-bottom: 2px solid transparent; 
 }
 
 .navbarContainer a:hover {
   color: #23509E;
-  opacity: 0.7;
+}
+
+.navbarContainer a.active {
+  border-bottom: 2px solid #23509E;
+  color: #23509E;
+  font-weight: 600;
+}
+
+/* Botón de Contacto */
+.NavContactBtn {
+  background-color: #003e97;
+  color: #ffffff !important;
+  border-radius: 5px;
+  padding: 0.5rem 1rem !important;
+}
+
+.NavContactBtn:hover {
+  background-color: #13485d;
+  opacity: 1 !important;
+}
+
+/* ==========================================
+   BOTÓN DE IDIOMA
+   ========================================== */
+.lang-btn {
+  background: none;
+  border: 1px solid #003e97;
+  color: #003e97;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.lang-btn:hover {
+  background-color: #003e97;
+  color: white;
 }
 
 /* ==========================================
@@ -74,46 +115,36 @@
   display: none;
   background: none;
   border: none;
-  color: #23509E;
+  color: #003e97;
   cursor: pointer;
   z-index: 1000;
+  margin-left: 1rem;
 }
 
 /* ==========================================
    RESPONSIVE (Mobile)
    ========================================== */
 @media (max-width: 1000px) {
-  .navbarContainer {
-    padding: 1rem;
-    flex-direction: row; /* Mantenemos logo y hamburguesa en línea */
-    justify-content: space-between;
-  }
-
-  .nav-spacer {
-    display: none; /* Quitamos el balanceador en móvil */
-  }
-
-  .logoContainer {
-    flex: none;
-  }
-
   .hamburger-btn {
     display: block;
-    order: 2;
+  }
+
+  .nav-right-container {
+    /* En móvil, ocultamos la lista de enlaces por defecto */
+    gap: 1rem;
   }
 
   .links {
-    display: none; 
+    display: none; /* Se oculta hasta que el estado isMenuOpen lo active */
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #f7f9fb;
     padding: 2rem 0;
-    border-bottom: 2px solid #23509E;
+    border-bottom: 2px solid #003e97;
     gap: 1.5rem;
-    flex: none;
   }
 
   .links.show {
