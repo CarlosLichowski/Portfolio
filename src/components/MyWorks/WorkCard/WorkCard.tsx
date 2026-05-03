@@ -30,7 +30,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
     <motion.div className={`workContainer ${gridClass}`} {...animationProps}>
       <div className='workImageContainer'>
         <img className="workImage" src={imageSrc} alt={altText} />
-        <h2 className="CardTitleH2">{title}</h2>
+        
       </div>
 
       <div className="workDescription">
@@ -42,6 +42,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
       </div>
 
       <div className='workRepository'>
+          <h2 className="CardTitleH2">{title}</h2>
         {repoLink && (
           <a href={repoLink} target="_blank" rel="noopener noreferrer">
             {/* 3. Traducción de botones */}

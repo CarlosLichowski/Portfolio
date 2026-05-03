@@ -5,18 +5,21 @@
   justify-content: center; /* 🔥 centra TODO el contenido */
   align-items: center;
   padding: 2rem;
-  background: #f7f9fb;
-}
+background: #0D1015;
+background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 100%);
+color: #d5e3fc;}
 
 
 
 /* 🔥 CONTENEDOR INTERNO (CLAVE) */
 .bannerContent {
+  height: 100vh;
   width: 100%;
   max-width: 1200px; /* 🔥 evita que se desparrame */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -28,16 +31,12 @@
   align-items: center; /* 🔥 centrado en mobile */
   gap: 1rem;
   text-align: center;
-  max-width: 600px;
+  max-width: 35vw;
 }
 
 /* IMAGE */
 
-.bannerImgContainer {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
+
 
 .bannerImg {
   width: 100%;
@@ -49,7 +48,7 @@
 .banner h1 {
   font-size: 2.2rem;
   line-height: 1.1;
-  color: #000000;
+  color: #ffffff;
   font-family: "Manrope", sans-serif;
 }
 
@@ -57,14 +56,14 @@
 
 .banner h2 {
   font-size: 1.2rem;
-  color: #00296a;
+  color: #FFFF;
    font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 }
 
 .banner p {
   font-size: 1rem;
-  color: #000000;
+  color: #FFFF;
      font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 }
@@ -86,8 +85,8 @@
 }
 
 .btnToContact{
- background-color: #00296a;
-  color: #f7f9fb;
+ background-color: #003e97;;
+  color: #fff;
 }
 
 
@@ -99,7 +98,7 @@
 @media (min-width: 768px) {
   .bannerContent {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 

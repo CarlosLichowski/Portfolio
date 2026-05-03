@@ -11,15 +11,16 @@
 
 .aboutContainer {
   width: 100%;
-  height: 1100px;
+  height: 100vh;
   padding: 10rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap:1rem;
-  background: #f7f9fb;
-  color: #000000;
+background: #0D1015;
+background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 100%);
+  color: #ffffff;
   font-family: "Inter", sans-serif;
 }
 
@@ -49,13 +50,13 @@
   object-fit: contain;
 
   /* 🔥 efecto pro */
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.377));
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .textColumnContainer img:hover {
   transform: scale(1.05) translateY(-5px);
-  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
+  
 }
 
 /* TEXTO */
@@ -68,8 +69,8 @@
 .aboutH2 {
   font-size: 1.7rem;
   margin-bottom: 1rem;
-  color: #000000;
-  background: linear-gradient(90deg, #000000, #2e2e2e);
+  color: #ffffff;
+  background: linear-gradient(90deg, #ffffff, #a5a5a5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -180,7 +181,8 @@
 
   .text1,
   .text2 {
-    color: #000000;
+    color: #ffffff;
+    text-shadow: 2px 1px 2px rgba(0,62,151,0.6);
     font-size: 1.1rem;
   }
 

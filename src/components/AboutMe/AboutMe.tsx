@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
   return (
     <div className="aboutContainer" id="About">
       <div className='textColumnContainer'>
-        <img src={Perfil} alt="Perfil"/>
+        <img className='perfilimg' src={Perfil} alt="Perfil"/>
         <div className='textcontainer'>
           <h2 className="aboutH2">{t('aboutPage.title')}</h2>
           <p className="text1">{t('aboutPage.text1')}</p>

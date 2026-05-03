@@ -4,17 +4,20 @@
 
 .footer {
   width: 100%;
+  height: 100vh;
   padding: 4rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 3rem;
   color: #000000;
-  background: #f7f9fb;
+  background: #0D1015;
+background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 100%);
 }
 
 .footerBtn{
-  background: #ffff;
+  
   border: none;
   padding: 1rem;
   color: #003e97;
@@ -54,6 +57,8 @@
   gap: 1.5rem;
   padding: 3rem;
   border-radius: 25px;
+
+
 }
 
 .footerbox {
@@ -66,8 +71,8 @@
 }
 
 .footerbox:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+ border-bottom:  1px  solid rgba(0,0,0,0.4);;
 }
 
 .footerboxh3 {
@@ -116,7 +121,7 @@
 
 .footerBottom h2 {
   font-size: 1rem;
-  color: #000000;
+  color: #ffffff;
   border-bottom: 2px solid #1056a7;
   padding: 5px 10px;
   transition: 0.3s ease;
@@ -130,7 +135,7 @@
 
 .footerEmail {
   font-size: 0.9rem;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -143,7 +148,7 @@
   .footerContent {
     flex-wrap: wrap;
     justify-content: center;
-    background: #003e97;
+    
   }
 
   .footerBottom {

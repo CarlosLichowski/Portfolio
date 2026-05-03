@@ -1,69 +1,45 @@
 /* =========================
-   CARD BASE
+   CARD BASE (Light Mode)
 ========================= */
 .workContainer {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
-  background: #ffffff;
-  border: 1px solid #23509E;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e293b;             /* Fondo blanco limpio */
+  border: 1px solid #e5e7eb;      /* Borde gris claro (gray-200) */
   border-radius: 0.7rem;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  height: 100%; /* Permite que la tarjeta llene el espacio del Grid */
-=======
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-  border: 2px solid #003e97;
-  border-radius: 0.7rem;
-  overflow: hidden;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 5px 15px #003e97;
->>>>>>> a3aa62b46adb394db04dd673ac029c5239e6273e
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra suave y sutil */
+  aspect-ratio: 4/4;
+  width: 20vw;
+  
 }
 
 .workContainer:hover {
   transform: translateY(-5px) scale(1.01);
-  border-color: #3b74d6; /* Un pequeño detalle de feedback visual */
+  border-color: #cbd5e1;          /* Un gris un poco más oscuro al hacer hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* La sombra crece ligeramente */
 }
-
-/* =========================
-   IMAGE (Proporción constante)
-========================= */
-<<<<<<< HEAD
-=======
-
-@media (min-width: 1200px) {
-
-.workContainer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 450px;
-  height: 550px;
-}
-}
-
 
 /* =========================
    IMAGE
 ========================= */
-
->>>>>>> a3aa62b46adb394db04dd673ac029c5239e6273e
 .workImageContainer {
   width: 100%;
-  aspect-ratio: 4 / 3; /* Esto garantiza que todas las tarjetas tengan la misma forma */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .workImage {
-  width: 100%;
+
+  
+  width: auto;
   height: 100%;
-  object-fit: cover; /* Recorta la imagen para que rellene sin deformarse */
+  object-fit: cover;
 }
 
 /* =========================
@@ -73,11 +49,12 @@
   margin: 1rem 0 0.5rem 0;
   font-size: 1.2rem;
   font-family: "Inter", sans-serif;
-  color: #fff;
+  color: #ffffff;                 /* Texto gris muy oscuro (casi negro) */
   text-align: center;
 }
 
 .description {
+ 
   list-style: none;
   display: flex;
   justify-content: center;
@@ -85,13 +62,18 @@
   gap: 0.5rem;
   padding: 0.6rem 0.5rem;
   margin: 0;
-  background: rgba(255, 255, 255, 0.03);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1e293b;
   font-size: 0.75rem;
-  color: #aaa;
-  flex-grow: 1; /* Esto hace que la descripción llene el espacio sobrante */
+  color: #ffffff;                 /* Texto gris (gray-600) para buena lectura */
+  flex-grow: 1;
+  border-bottom: 2px solid #003e97;
+
+
 }
 
+.description ul{
+  width: 100%;
+}
 /* =========================
    BUTTONS
 ========================= */
@@ -99,6 +81,8 @@
   width: 100%;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 10px;
 }
@@ -106,22 +90,24 @@
 .repositoryBtn {
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
-  background: linear-gradient(to bottom, #0b0336, #1c2091);
+  /* Degradado azul brillante profesional */
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: none;                   /* Sin borde para un look más limpio */
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
 }
 
 .repositoryBtn:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
 /* =========================
-   MEDIA QUERIES (Ajustes finos)
+   MEDIA QUERIES
 ========================= */
-
 @media (min-width: 768px) {
   .CardTitleH2 {
     font-size: 1.4rem;

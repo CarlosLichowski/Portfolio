@@ -1,5 +1,5 @@
 /* =========================
-   RESET & BASE (Mobile First)
+    RESET & BASE (Mobile First)
 ========================= */
 * {
   box-sizing: border-box;
@@ -9,61 +9,69 @@
 
 .worksmaincontainer {
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: #ffffff;
-  color: #000000;
+  background: #0D1015;
+background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 100%);
+  color: #ffffff;
   padding: 4rem 1.5rem;
   gap: 3rem;
 }
 
-.MoreProjectsBtn{
-    display: inline-flex;
-  
-  padding: 0.7rem 1.4rem;
-  border-radius: 8px;
-  text-decoration: none;
-  border: 1px solid #c1c2c2;
-   background-color: #00296a;
-  color: #f7f9fb;
-}
-
 .worksmaincontainerh2 {
+  margin-top: 2rem; 
   font-family: "Open Sans", sans-serif;
   font-size: 2rem;
   text-align: center;
 }
 
 /* =========================
-   FEATURED SECTION (SPLIT-SCREEN)
+    FEATURED SECTION (SPLIT-SCREEN)
 ========================= */
 .featured-section {
   width: 100%;
-  max-width: 1100px;
+  height: 100%;
+  
+  border-radius: 25px;
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .split-screen-container {
+  width: 100%;
+  height: 90vh;
   display: flex;
   flex-direction: column; /* Stacked en móvil */
   align-items: center;
+  justify-content: center;
   gap: 2rem;
+  
 }
 
 .split-image {
   flex: 1;
-  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  
 }
 
 .split-image img {
-  width: 100%;
+  
+  width: 25vw;
+  aspect-ratio: 4/4;
   height: auto;
   border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+  border:#003e97;
 }
 
 .split-content {
@@ -76,13 +84,47 @@
   margin-bottom: 1rem;
 }
 
+/* Nuevas clases para los links */
+.project-links {
+  display: flex;
+  justify-content: center; /* Centrado en móvil */
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-link {
+  padding: 0.6rem 1.2rem;
+  background-color: #355443; /* Usando el verde oscuro de tu degradado */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.btn-link:hover {
+  opacity: 0.9;
+}
+
 /* =========================
-   ARCHIVE SECTION (GRID)
+    ARCHIVE SECTION (GRID)
 ========================= */
 .archive-section {
   width: 100%;
-  max-width: 1200px;
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+  
+  padding: 3rem 2rem; /* Un poco más de aire arriba y abajo */
+  border-radius: 1.5rem; /* Bordes suaves para que no se vea tan "bloque" */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Espaciado automático entre elementos internos */
+ 
 }
+
+
 
 .archive-title {
   margin-bottom: 2rem;
@@ -90,14 +132,18 @@
 }
 
 .worksContainer {
+  padding: 5%;
   display: grid;
   grid-template-columns: 1fr; /* 1 columna en móvil */
   gap: 2rem;
   width: 100%;
+  
 }
 
+
+
 /* =========================
-   BOTÓN
+    BOTÓN
 ========================= */
 .MoreProyectsBtn {
   margin-top: 2rem;
@@ -116,7 +162,7 @@
 }
 
 /* =========================
-   TABLET & DESKTOP RESPONSIVE
+    TABLET & DESKTOP RESPONSIVE
 ========================= */
 
 @media (min-width: 768px) {
@@ -131,6 +177,11 @@
     text-align: left;
   }
 
+  /* Ajustar botones a la izquierda en desktop */
+  .project-links {
+    justify-content: flex-start;
+  }
+
   /* Grid del Archive */
   .worksContainer {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas */
@@ -140,36 +191,10 @@
 @media (min-width: 1024px) {
   .worksmaincontainerh2 {
     font-size: 3rem;
-    
-  }
-  .worksmaincontainer{
-     margin: 0 ;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-
-
-       min-width: 100%;
-
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffff;
-  color: #000000;
-  padding: 4rem 1.5rem;
-  gap: 3rem;
-
   }
 
-
+  /* Grid del Archive (3 columnas para pantallas grandes) */
   .worksContainer {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
   }
-
 }
