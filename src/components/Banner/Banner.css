@@ -1,99 +1,206 @@
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 .banner {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center; /* 🔥 centra TODO el contenido */
+  justify-content: center;
   align-items: center;
   padding: 2rem;
-background: #0D1015;
-background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 100%);
-color: #d5e3fc;}
-
-
-
-/* 🔥 CONTENEDOR INTERNO (CLAVE) */
-.bannerContent {
-  height: 100vh;
-  width: 100%;
-  max-width: 1200px; /* 🔥 evita que se desparrame */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  background: #111111;
+  color: #d5e3fc;
 }
 
-/* TEXT */
+/* =========================
+   TARJETA (BANNER CONTENT)
+========================= */
+.bannerContent {
+  height: auto;
+  min-height: 600px;
+  max-width: 1000px; /* Ajustado para un equilibrio visual perfecto */
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, rgba(16, 16, 16, 1) 0%, rgba(33, 33, 33, 1) 52%, rgba(21, 21, 21, 1) 100%);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden; /* Crucial para que el brillo no se salga */
+}
 
+/* 1. Borde superior de cristal */
+.bannerContent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* 2. Efecto de reflejo metálico */
+.bannerContent::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 70%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: metallicShine 14s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes metallicShine {
+  0% { left: -150%; }
+  20% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* =========================
+   ELEMENTOS DE TEXTO
+========================= */
 .bannerText {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 🔥 centrado en mobile */
+  align-items: flex-start; /* Alineado a la izquierda para estilo profesional */
   gap: 1rem;
-  text-align: center;
-  max-width: 35vw;
+  text-align: left;
+  max-width: 500px;
+  position: relative;
+  z-index: 2; /* Por encima del brillo */
 }
-
-/* IMAGE */
-
-
-
-.bannerImg {
-  width: 100%;
-  max-width: 400px;
-}
-
-/* TEXT STYLES */
 
 .banner h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   line-height: 1.1;
   color: #ffffff;
-  font-family: "Manrope", sans-serif;
+  font-family: "Noto Serif", serif;
+  margin: 0;
 }
 
-
-
 .banner h2 {
-  font-size: 1.2rem;
-  color: #FFFF;
-   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
+  font-size: 1.1rem;
+  color: #9b9b9b;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .banner p {
   font-size: 1rem;
-  color: #FFFF;
-     font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
+  color: #cccccc;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
 }
 
-/* BUTTON */
+/* =========================
+   BOTONES
+========================= */
+.BannerBtnContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
 
 .btnToExplore, .btnToContact {
   display: inline-flex;
-  
-  padding: 0.7rem 1.4rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
   text-decoration: none;
-  border: 1px solid #c1c2c2;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.btnToExplore{
- background-color: #d5e3fc;
-  
+.btnToExplore {
+  background: #f7f5ec;
+  color: #111;
 }
 
-.btnToContact{
- background-color: #003e97;;
-  color: #fff;
+.btnToExplore:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
 }
 
+.btnToContact {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f7f5ec;
+  backdrop-filter: blur(5px);
+}
 
+.btnToContact:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #c1c2c2;
+  transform: translateY(-2px);
+}
 
 /* =========================
-   TABLET
+   IMAGEN / LOGO
 ========================= */
+.bannerImgContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.bannerImg {
+  width: 100%;
+  max-width: 400px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* =========================
+   RESPONSIVE (MOBILE / TABLET)
+========================= */
+@media (max-width: 768px) {
+  .bannerContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .bannerText {
+    align-items: center;
+    text-align: center;
+  }
+
+  .BannerBtnContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btnToExplore, .btnToContact {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .banner h1 {
+    font-size: 2rem;
+  }
+}
 
 @media (min-width: 768px) {
   .bannerContent {
@@ -101,34 +208,4 @@ color: #d5e3fc;}
     justify-content: space-around;
     align-items: center;
   }
-
-  .bannerText {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .banner h1 {
-    font-size: 3rem;
-  }
-}
-
-/* =========================
-   DESKTOP
-========================= */
-
-@media (min-width: 1200px) {
-  .banner h1 {
-    font-size: 3.5rem;
-  }
-
-
-  .BannerBtnContainer{
-  display: flex;
-  flex-direction: wrap;
-    align-items: center;
-    justify-content: space-around;
-    gap: 2rem;
-}
-
-
 }

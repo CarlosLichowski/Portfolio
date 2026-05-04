@@ -15,18 +15,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #0D1015;
-background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 100%);
+  background: #111111;
   color: #ffffff;
-  padding: 4rem 1.5rem;
+  padding: 4rem 2rem;
   gap: 3rem;
 }
 
 .worksmaincontainerh2 {
+  width: 100%;
+  text-align: start;
   margin-top: 2rem; 
   font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
-  text-align: center;
+  font-size: 1rem;
+  
 }
 
 /* =========================
@@ -128,7 +129,8 @@ background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 1
 
 .archive-title {
   margin-bottom: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  width: 100%;
 }
 
 .worksContainer {
@@ -191,6 +193,11 @@ background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 1
 @media (min-width: 1024px) {
   .worksmaincontainerh2 {
     font-size: 3rem;
+    
+  }
+
+  .worksmaincontainer {
+    padding: 4rem 7rem;
   }
 
   /* Grid del Archive (3 columnas para pantallas grandes) */

@@ -10,24 +10,66 @@ import codigochef from '../../assets/img/MyWork/codigochef.png';
 import ramosmejia from '../../assets/img/MyWork/ramos mejia logo.png';
 import sanacionesCuanticas from '../../assets/img/MyWork/sanacionescuanticas.png';
 
+// 1. Definición de la Interfaz para los proyectos
+interface ProjectData {
+  title: string;
+  description: string[];
+  imageSrc: string;
+  altText: string;
+  gridClass?: string;    // El signo ? lo hace opcional
+  repoLink?: string;     // Opcional
+  visitLink?: string;    // Opcional
+}
+
 const MyWorks: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px 0px' });
   const mainControls = useAnimation();
 
-  // Datos de los proyectos
-  const featuredProjects = [
-    { title: 'Innova', description: ['E-commerce', 'M.E.R.N'], imageSrc: Innova, altText: 'Innova', repoLink: 'https://github.com/Carlicho/Innova-Render' },
-    { title: 'Laboratorio Ramos Mejia', description: ['ReactJs', 'firebase'], imageSrc: ramosmejia, altText: 'ramosmejia', visitLink: 'https://labramos.web.app/' },
-        { title: 'CodigoChef', gridClass: 'div4', description: ['Restaurant', 'ReactJs'], imageSrc: codigochef, altText: 'Restaurant web', visitLink: 'https://codigochef.netlify.app/' },
-
+  // 2. Datos tipados con la interfaz ProjectData
+  const featuredProjects: ProjectData[] = [
+    { 
+      title: 'Innova', 
+      description: ['E-commerce', 'M.E.R.N'], 
+      imageSrc: Innova, 
+      altText: 'Innova', 
+      repoLink: 'https://github.com/Carlicho/Innova-Render' 
+    },
+    { 
+      title: 'Laboratorio Ramos Mejia', 
+      description: ['ReactJs', 'firebase'], 
+      imageSrc: ramosmejia, 
+      altText: 'ramosmejia', 
+      visitLink: 'https://labramos.web.app/' 
+    },
+    { 
+      title: 'CodigoChef', 
+      gridClass: 'div4', 
+      description: ['Restaurant', 'ReactJs'], 
+      imageSrc: codigochef, 
+      altText: 'Restaurant web', 
+      visitLink: 'https://codigochef.netlify.app/' 
+    },
   ];
 
-  const archiveProjects = [
-        { title: 'RickandMorty Api', description: ['M.E.R.N'], imageSrc: Rickandmorty, altText: 'Rickandmorty', repoLink: 'https://github.com/Carlicho/RickandMorty' },
-        { title: 'SanacionesCuanticas',  description: ['Web de Servicios', 'ReactJs'], imageSrc: sanacionesCuanticas, altText: ' web de Servicios', repoLink: 'https://github.com/CarlosLichowski/Client-SanacionesCuenticas' },
-
+  const archiveProjects: ProjectData[] = [
+    { 
+      title: 'RickandMorty Api', 
+      description: ['M.E.R.N'], 
+      imageSrc: Rickandmorty, 
+      altText: 'Rickandmorty', 
+      repoLink: 'https://github.com/Carlicho/RickandMorty',
+      gridClass: 'archive-item' // Agregado para evitar errores en WorkCard
+    },
+    { 
+      title: 'SanacionesCuanticas',  
+      description: ['Web de Servicios', 'ReactJs'], 
+      imageSrc: sanacionesCuanticas, 
+      altText: ' web de Servicios', 
+      repoLink: 'https://github.com/CarlosLichowski/Client-SanacionesCuenticas',
+      gridClass: 'archive-item' // Agregado para evitar errores en WorkCard
+    },
   ];
 
   useEffect(() => {
@@ -43,7 +85,7 @@ const MyWorks: React.FC = () => {
 
   return (
     <motion.div ref={ref} className="worksmaincontainer" id="Projects" initial="hidden" animate={mainControls}>
-      <h2 className='worksmaincontainerh2'>Work</h2>
+      <h2 className='worksmaincontainerh2'>Selected Works</h2>
 
       <section className="featured-section">
         <AnimatePresence mode="wait">
@@ -64,7 +106,6 @@ const MyWorks: React.FC = () => {
                 {featuredProjects[currentIndex].description.map((desc, i) => <li key={i}>{desc}</li>)}
               </ul>
               
-              {/* Lógica de botones corregida */}
               <div className="project-links">
                 {featuredProjects[currentIndex].repoLink && (
                   <a href={featuredProjects[currentIndex].repoLink} target="_blank" rel="noopener noreferrer" className="btn-link">
@@ -86,12 +127,15 @@ const MyWorks: React.FC = () => {
         <h3 className='archive-title'>Archive</h3>
         <div className="worksContainer">
           {archiveProjects.map((project, index) => (
-            <WorkCard key={index} {...project} animationProps={{ initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } }} />
+            <WorkCard 
+              key={index} 
+              {...project} 
+              gridClass={project.gridClass || 'default-grid'} // Asegura que siempre se pase un string
+              animationProps={{ initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } }} 
+            />
           ))}
         </div>
       </section>
-
-
     </motion.div>
   );
 };

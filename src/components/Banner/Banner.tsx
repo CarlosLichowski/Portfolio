@@ -10,7 +10,7 @@ const Banner = () => {
       <div className="bannerContent">
         <div className="bannerText">
           <h1>
-            <span>Carlos Julian </span>
+            <span>Carlos J. </span>
             <span>Lichowski</span>
           </h1>
           <h2>{t('banner.subtitle')}</h2>
@@ -25,7 +25,7 @@ const Banner = () => {
             </button>
             <button className='btnToContact' onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('Projects')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('Contact')?.scrollIntoView({ behavior: 'smooth' });
               }}>
               {t('banner.contact')}
             </button>

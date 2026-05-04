@@ -1,203 +1,127 @@
 /* =========================
-   RESET
+   BASE & CONTAINER
 ========================= */
-* {
-  box-sizing: border-box;
-}
-
-/* =========================
-   BASE
-========================= */
-
 .aboutContainer {
   width: 100%;
-  height: 100vh;
-  padding: 10rem 1.5rem;
+  min-height: 100vh; /* Cambiado a min-height para evitar cortes */
+  padding: 8rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap:1rem;
-background: #0D1015;
-background: linear-gradient(90deg, rgba(13, 16, 21, 1) 0%, rgba(36, 36, 38, 1) 100%);
+  justify-content: center;
+  gap: 5rem;
+  background: #111111;
   color: #ffffff;
   font-family: "Inter", sans-serif;
 }
 
 /* =========================
-   HERO (IMAGEN + TEXTO)
+   HERO SECTION
 ========================= */
-
 .textColumnContainer {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-
-  /* 🔥 Animación entrada */
+  gap: 3rem;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   animation: fadeUp 0.8s ease forwards;
 }
 
-/* IMAGEN */
-.textColumnContainer img {
+.perfilimg {
   width: 100%;
-  max-width: 280px;
-  object-fit: contain;
-
-  /* 🔥 efecto pro */
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.377));
-  transition: transform 0.4s ease, filter 0.4s ease;
+  max-width: 320px;
+  border-radius: 20px; /* Un radio suave queda más moderno */
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+  transition: all 0.4s ease;
 }
 
-.textColumnContainer img:hover {
-  transform: scale(1.05) translateY(-5px);
-  
+.perfilimg:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 2px 2px rgba(0, 62, 151, 0.3)); /* Resplandor azul sutil */
+  cursor: pointer;
 }
 
-/* TEXTO */
 .textcontainer {
-  width: 100%;
-  max-width: 600px;
+  max-width: 650px;
   text-align: center;
 }
 
 .aboutH2 {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  background: linear-gradient(90deg, #ffffff, #a5a5a5);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Noto Serif", serif;
+  background: linear-gradient(90deg, #ffffff, #888888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text1,
-.text2 {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #000000;
-}
-
-.text1 {
-  margin-bottom: 1rem;
+/* 🔥 CORRECCIÓN: Texto legible en fondo oscuro */
+.text1, .text2 {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc; /* Un gris claro es más cómodo para leer que el blanco puro */
+  margin-bottom: 1.2rem;
 }
 
 /* =========================
-   SKILLS
+   SKILLS SECTION
 ========================= */
-
 .skillsIconsContainer {
   width: 100%;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-
-  /* animación */
+  max-width: 900px;
+  text-align: center;
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.2s;
+  animation: fadeUp 1s ease forwards 0.3s;
 }
 
 .skillsH2 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #555;
+  margin-bottom: 3rem;
 }
 
-/* ICONOS */
 .skillsIcons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 3rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .skillsIcons img {
-  width: 2.5rem;
-  transition: all 0.3s ease;
-  filter: grayscale(40%) brightness(0.9);
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: grayscale(100%) opacity(0.6);
 }
 
 .skillsIcons img:hover {
-  transform: scale(1.2) translateY(-5px);
-  filter: grayscale(0%) brightness(1.2);
+  transform: scale(1.3) translateY(-10px);
+  filter: grayscale(0%) opacity(1);
 }
 
 /* =========================
-   TABLET
+   RESPONSIVE
 ========================= */
-
 @media (min-width: 768px) {
   .textColumnContainer {
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    text-align: left;
   }
-
-  .textColumnContainer img {
-    max-width: 320px;
-  }
-
   .textcontainer {
     text-align: left;
   }
-
-  .aboutH2 {
-    font-size: 2.2rem;
-  }
-
-  .text1,
-  .text2 {
-    font-size: 1rem;
-  }
-
-  .skillsIcons img {
-    width: 3.2rem;
-  }
 }
-
-/* =========================
-   DESKTOP
-========================= */
-
-@media (min-width: 1200px) {
-  .textColumnContainer {
-    gap: 5rem;
-  }
-
-  .textColumnContainer img {
-    max-width: 380px;
-  }
-
-  .aboutH2 {
-    font-size: 2.6rem;
-  }
-
-  .text1,
-  .text2 {
-    color: #ffffff;
-    text-shadow: 2px 1px 2px rgba(0,62,151,0.6);
-    font-size: 1.1rem;
-  }
-
-  .skillsIcons img {
-    width: 4rem;
-  }
-}
-
-/* =========================
-   ANIMACIONES
-========================= */
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }

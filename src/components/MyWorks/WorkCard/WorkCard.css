@@ -1,26 +1,66 @@
 /* =========================
-   CARD BASE (Light Mode)
+   CARD BASE (Dark Metallic Style)
 ========================= */
 .workContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background: #1e293b;             /* Fondo blanco limpio */
-  border: 1px solid #e5e7eb;      /* Borde gris claro (gray-200) */
+  background: linear-gradient(90deg, rgba(16, 16, 16, 1) 0%, rgba(33, 33, 33, 1) 52%, rgba(21, 21, 21, 1) 100%);
+  border: 1px solid #232322;
   border-radius: 0.7rem;
-  overflow: hidden;
+  overflow: hidden; /* Importante para que el brillo no se salga de las esquinas */
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra suave y sutil */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   aspect-ratio: 4/4;
-  width: 20vw;
-  
+  width: 100%; /* Cambiado a 100% para que el grid de MyWorks controle el ancho */
+  position: relative; /* Necesario para los pseudo-elementos ::before y ::after */
 }
 
+/* Efecto Elevación y Borde al pasar el mouse */
 .workContainer:hover {
-  transform: translateY(-5px) scale(1.01);
-  border-color: #cbd5e1;          /* Un gris un poco más oscuro al hacer hover */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* La sombra crece ligeramente */
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 1. Borde superior de cristal (opcional, para coherencia con el Banner) */
+.workContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* 2. EFECTO DE REFLEJO METÁLICO (Se activa al hacer hover) */
+.workContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 30%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.05) 70%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.workContainer:hover::after {
+  left: 150%;
+  transition: left 0.7s ease-in-out;
 }
 
 /* =========================
@@ -32,48 +72,60 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2; /* Asegura que la imagen esté debajo del brillo */
 }
 
 .workImage {
-
-  
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.workContainer:hover .workImage {
+  transform: scale(1.05); /* Zoom suave al entrar con el mouse */
 }
 
 /* =========================
    CONTENT
 ========================= */
 .CardTitleH2 {
-  margin: 1rem 0 0.5rem 0;
-  font-size: 1.2rem;
+  margin: 1rem 0 0.2rem 0;
+  font-size: 1.1rem;
   font-family: "Inter", sans-serif;
-  color: #ffffff;                 /* Texto gris muy oscuro (casi negro) */
+  color: #ffffff;
   text-align: center;
+  position: relative;
+  z-index: 3;
 }
 
 .description {
- 
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0.6rem 0.5rem;
+  padding: 0.4rem 0.5rem;
   margin: 0;
-  background-color: #1e293b;
-  font-size: 0.75rem;
-  color: #ffffff;                 /* Texto gris (gray-600) para buena lectura */
+  font-size: 0.7rem;
+  color: #9b9b9b; /* Color más suave para las etiquetas */
   flex-grow: 1;
-  border-bottom: 2px solid #003e97;
-
-
-}
-
-.description ul{
   width: 100%;
+  position: relative;
+  z-index: 3;
 }
+
+/* Estilo para los items de la lista (tags) */
+.description li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* =========================
    BUTTONS
 ========================= */
@@ -85,24 +137,28 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  position: relative;
+  z-index: 5; /* Asegura que los botones sean clickeables */
 }
 
 .repositoryBtn {
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
-  /* Degradado azul brillante profesional */
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  border: none;                   /* Sin borde para un look más limpio */
+  border: none;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
   box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
 }
 
 .repositoryBtn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
 }
 
 /* =========================
@@ -110,6 +166,14 @@
 ========================= */
 @media (min-width: 768px) {
   .CardTitleH2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .workContainer {
+    width: 100%; /* Deja que el grid de MyWorks defina el tamaño */
+    aspect-ratio: auto;
+    min-height: 400px;
   }
 }

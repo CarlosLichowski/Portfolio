@@ -12,8 +12,8 @@
   padding: 1rem 2rem;
   z-index: 9999;
   transition: 0.3s ease-in-out;
-  background-color: #f7f9fb;
-  border-bottom: 2px solid #003e97;
+  background-color: #111111;
+  border-bottom: 2px solid #232322;
   box-sizing: border-box;
   width: 100%;
 }
@@ -22,7 +22,7 @@
    LOGO
    ========================================== */
 .logoContainer {
-  color: #003e97;
+  color: #f7f9fb;
   font-family: Arial, sans-serif;
   flex: 0 0 auto;
 }
@@ -60,32 +60,33 @@
 .navbarContainer a {
   padding: 0.5rem;
   text-decoration: none;
-  color: #000000;
+  color: #83a3a3;
   font-family: "Poppins", sans-serif;
   transition: 0.3s;
   border-bottom: 2px solid transparent; 
 }
 
 .navbarContainer a:hover {
-  color: #23509E;
+  color: #f7f5ec;
 }
 
 .navbarContainer a.active {
-  border-bottom: 2px solid #23509E;
-  color: #23509E;
+  border-bottom: 2px solid #f7f5ec;
+  color: #f7f5ec;
   font-weight: 600;
 }
 
 /* Botón de Contacto */
 .NavContactBtn {
-  background-color: #003e97;
-  color: #ffffff !important;
+  background-color: #f7f5ec;
+  color: #515352 !important;
   border-radius: 5px;
   padding: 0.5rem 1rem !important;
 }
 
 .NavContactBtn:hover {
-  background-color: #13485d;
+  background-color: #003e97;
+  color: #f7f5ec!important;
   opacity: 1 !important;
 }
 
@@ -94,8 +95,8 @@
    ========================================== */
 .lang-btn {
   background: none;
-  border: 1px solid #003e97;
-  color: #003e97;
+  border: 1px solid #83a3a3;
+  color: #f7f5ec;
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   cursor: pointer;

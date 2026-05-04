@@ -26,18 +26,17 @@ i18next
             skills: "Technical Arsenal"
           },
           banner: {
-            subtitle: "Fullstack developer and lab technician",
+            subtitle: "FULLSTACK WEB DEVELOPER ",
             description: "Crafting functional, high-performance web experiences through the lens of analytical precision and system-level resilience.",
             explore: "Explore",
             contact: "Contact"
           },
-          footer: {
-            title: "Need Precision for your Next Build?",
-            description: "Whether it's a regulated medical device interface or a high-traffic enterprise application, let's build it with clinical accuracy.",
-            btn: "Start a Conversation",
-            linkedin: "LinkedIn",
-            github: "Github"
-          },
+"footer": {
+    "title": "Need Precision for your Next Build?",
+    "description": "Whether it's a regulated medical device interface or a high-traffic enterprise application, let's build it with clinical accuracy.",
+    "btn": "Start a Conversation",
+    "copied": "Email Copied!"
+  },
           work: {
             repo: "Repository",
             visit: "Visit Page"
@@ -59,18 +58,17 @@ i18next
             skills: "Arsenal Técnico"
           },
           banner: {
-            subtitle: "Desarrollador Fullstack y Técnico de Laboratorio",
+            subtitle: "FULLSTACK WEB DEVELOPER",
             description: "Creando experiencias web funcionales y de alto rendimiento a través del lente de la precisión analítica y la resiliencia digital a nivel de sistema.",
             explore: "Explorar",
             contact: "Contacto"
           },
-          footer: {
-            title: "¿Necesitas precisión para tu próximo proyecto?",
-            description: "Ya sea una interfaz de dispositivo médico regulado o una aplicación empresarial de alto tráfico, construyámoslo con precisión clínica.",
-            btn: "Iniciar una conversación",
-            linkedin: "LinkedIn",
-            github: "Github"
-          },
+"footer": {
+    "title": "¿Necesitas precisión para tu próximo proyecto?",
+    "description": "Ya sea una interfaz de dispositivos médicos regulados o una aplicación empresarial de alto tráfico, construyámoslo con precisión clínica.",
+    "btn": "Iniciar una conversación",
+    "copied": "¡Email Copiado!"
+  },
           work: {
             repo: "Repositorio",
             visit: "Visitar Sitio"
