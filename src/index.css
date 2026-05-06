@@ -11,10 +11,11 @@ html, body {
   width: 100%;
   overflow-x: hidden; /* 🔥 evita scroll horizontal fantasma */
   
+  
 }
 
 body {
- background-color: #f7f9fb;
+ background: #111111;
    font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 }

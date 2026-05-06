@@ -1,5 +1,5 @@
 /* =========================
-    RESET & BASE (Mobile First)
+    RESET & BASE
 ========================= */
 * {
   box-sizing: border-box;
@@ -13,195 +13,144 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: #111111;
   color: #ffffff;
   padding: 4rem 2rem;
   gap: 3rem;
 }
 
-.worksmaincontainerh2 {
+/* =========================
+    HEADERS CON LÍNEA CSS
+========================= */
+.section-header-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   width: 100%;
-  text-align: start;
-  margin-top: 2rem; 
+  margin-bottom: 1rem;
+}
+
+.section-line {
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, #3b82f6, transparent);
+}
+
+.worksmaincontainerh2, .archive-title {
   font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-size: 1rem;
-  
+  margin: 0;
+}
+
+/* =========================
+    ARCHIVE SECTION (GRID REDUCIDO)
+========================= */
+.archive-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.worksContainer {
+  width: 100%;
+  display: grid;
+  /* Control de tamaño de cards: min 280px, max 320px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 3rem;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
 /* =========================
     FEATURED SECTION (SPLIT-SCREEN)
 ========================= */
-.featured-section {
-  width: 100%;
-  height: 100%;
-  
-  border-radius: 25px;
-  color: #ffffff;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
 .split-screen-container {
   width: 100%;
-  height: 90vh;
-  display: flex;
-  flex-direction: column; /* Stacked en móvil */
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  
-}
-
-.split-image {
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  
-}
-
-.split-image img {
-  
-  width: 25vw;
-  aspect-ratio: 4/4;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-
-  border:#003e97;
-}
-
-.split-content {
-  flex: 1;
-  text-align: center;
-}
-
-.split-content h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-/* Nuevas clases para los links */
-.project-links {
-  display: flex;
-  justify-content: center; /* Centrado en móvil */
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.btn-link {
-  padding: 0.6rem 1.2rem;
-  background-color: #355443; /* Usando el verde oscuro de tu degradado */
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: opacity 0.2s;
-}
-
-.btn-link:hover {
-  opacity: 0.9;
-}
-
-/* =========================
-    ARCHIVE SECTION (GRID)
-========================= */
-.archive-section {
-  width: 100%;
-  margin: 0 auto; /* Centra el contenedor en la pantalla */
-  
-  padding: 3rem 2rem; /* Un poco más de aire arriba y abajo */
-  border-radius: 1.5rem; /* Bordes suaves para que no se vea tan "bloque" */
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3rem;
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
   justify-content: center;
-  gap: 2rem; /* Espaciado automático entre elementos internos */
- 
+  margin: 1rem 0;
 }
 
+.tag-list li {
+  font-size: 0.8rem;
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: rgba(59, 130, 246, 0.05);
+}
 
-
-.archive-title {
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+.split-image img {
   width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.worksContainer {
-  padding: 5%;
-  display: grid;
-  grid-template-columns: 1fr; /* 1 columna en móvil */
-  gap: 2rem;
-  width: 100%;
-  
+.split-content h3 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
 
-
-/* =========================
-    BOTÓN
-========================= */
-.MoreProyectsBtn {
-  margin-top: 2rem;
-  font-weight: 700;
-  padding: 0.8rem 2rem;
-  background: linear-gradient(90deg, #aac0ad 2%, #7e9785 50%, #355443 100%);
+.btn-link {
+  padding: 0.6rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  transition: 0.3s;
 }
 
-.MoreProyectsBtn:hover {
-  transform: scale(1.05);
+.btn-link:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
 }
 
 /* =========================
-    TABLET & DESKTOP RESPONSIVE
+    RESPONSIVE
 ========================= */
-
 @media (min-width: 768px) {
-  /* Layout del Featured */
   .split-screen-container {
-    flex-direction: row; /* Horizontal en desktop */
-    text-align: left;
-    gap: 4rem;
-  }
-  
-  .split-content {
+    flex-direction: row;
     text-align: left;
   }
 
-  /* Ajustar botones a la izquierda en desktop */
-  .project-links {
+  .tag-list, .project-links {
     justify-content: flex-start;
   }
 
-  /* Grid del Archive */
-  .worksContainer {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  .worksmaincontainerh2 {
+    font-size: 1.2rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .worksmaincontainerh2 {
-    font-size: 3rem;
-    
-  }
-
   .worksmaincontainer {
-    padding: 4rem 7rem;
-  }
-
-  /* Grid del Archive (3 columnas para pantallas grandes) */
-  .worksContainer {
-    grid-template-columns: repeat(3, 1fr);
+    padding: 4rem 10%;
   }
 }

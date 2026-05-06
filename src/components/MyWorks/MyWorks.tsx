@@ -10,15 +10,14 @@ import codigochef from '../../assets/img/MyWork/codigochef.png';
 import ramosmejia from '../../assets/img/MyWork/ramos mejia logo.png';
 import sanacionesCuanticas from '../../assets/img/MyWork/sanacionescuanticas.png';
 
-// 1. Definición de la Interfaz para los proyectos
 interface ProjectData {
   title: string;
   description: string[];
   imageSrc: string;
   altText: string;
-  gridClass?: string;    // El signo ? lo hace opcional
-  repoLink?: string;     // Opcional
-  visitLink?: string;    // Opcional
+  gridClass?: string;
+  repoLink?: string;
+  visitLink?: string;
 }
 
 const MyWorks: React.FC = () => {
@@ -27,7 +26,6 @@ const MyWorks: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: '-50px 0px' });
   const mainControls = useAnimation();
 
-  // 2. Datos tipados con la interfaz ProjectData
   const featuredProjects: ProjectData[] = [
     { 
       title: 'Innova', 
@@ -45,7 +43,6 @@ const MyWorks: React.FC = () => {
     },
     { 
       title: 'CodigoChef', 
-      gridClass: 'div4', 
       description: ['Restaurant', 'ReactJs'], 
       imageSrc: codigochef, 
       altText: 'Restaurant web', 
@@ -60,7 +57,7 @@ const MyWorks: React.FC = () => {
       imageSrc: Rickandmorty, 
       altText: 'Rickandmorty', 
       repoLink: 'https://github.com/Carlicho/RickandMorty',
-      gridClass: 'archive-item' // Agregado para evitar errores en WorkCard
+      gridClass: 'archive-item'
     },
     { 
       title: 'SanacionesCuanticas',  
@@ -68,7 +65,7 @@ const MyWorks: React.FC = () => {
       imageSrc: sanacionesCuanticas, 
       altText: ' web de Servicios', 
       repoLink: 'https://github.com/CarlosLichowski/Client-SanacionesCuenticas',
-      gridClass: 'archive-item' // Agregado para evitar errores en WorkCard
+      gridClass: 'archive-item'
     },
   ];
 
@@ -85,7 +82,12 @@ const MyWorks: React.FC = () => {
 
   return (
     <motion.div ref={ref} className="worksmaincontainer" id="Projects" initial="hidden" animate={mainControls}>
-      <h2 className='worksmaincontainerh2'>Selected Works</h2>
+      
+      {/* Sección Selected Works con Línea */}
+      <div className="section-header-container">
+        <span className="section-line"></span>
+        <h2 className='worksmaincontainerh2'>Selected Works</h2>
+      </div>
 
       <section className="featured-section">
         <AnimatePresence mode="wait">
@@ -102,7 +104,7 @@ const MyWorks: React.FC = () => {
             </div>
             <div className="split-content">
               <h3>{featuredProjects[currentIndex].title}</h3>
-              <ul>
+              <ul className="tag-list">
                 {featuredProjects[currentIndex].description.map((desc, i) => <li key={i}>{desc}</li>)}
               </ul>
               
@@ -123,14 +125,19 @@ const MyWorks: React.FC = () => {
         </AnimatePresence>
       </section>
 
+      {/* Sección Archive con Línea */}
       <section className="archive-section">
-        <h3 className='archive-title'>Archive</h3>
+        <div className="section-header-container">
+          <span className="section-line"></span>
+          <h3 className='archive-title'>Archive</h3>
+        </div>
+        
         <div className="worksContainer">
           {archiveProjects.map((project, index) => (
             <WorkCard 
               key={index} 
               {...project} 
-              gridClass={project.gridClass || 'default-grid'} // Asegura que siempre se pase un string
+              gridClass={project.gridClass || 'default-grid'}
               animationProps={{ initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } }} 
             />
           ))}

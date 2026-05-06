@@ -9,22 +9,24 @@
   background: linear-gradient(90deg, rgba(16, 16, 16, 1) 0%, rgba(33, 33, 33, 1) 52%, rgba(21, 21, 21, 1) 100%);
   border: 1px solid #232322;
   border-radius: 0.7rem;
-  overflow: hidden; /* Importante para que el brillo no se salga de las esquinas */
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  aspect-ratio: 4/4;
-  width: 100%; /* Cambiado a 100% para que el grid de MyWorks controle el ancho */
-  position: relative; /* Necesario para los pseudo-elementos ::before y ::after */
+  
+  /* Ajuste de tamaño y proporción */
+  aspect-ratio: 3 / 4; 
+  width: 100%;
+  max-width: 320px; /* Evita que crezcan demasiado */
+  margin: 0 auto;
+  position: relative;
 }
 
-/* Efecto Elevación y Borde al pasar el mouse */
 .workContainer:hover {
   transform: translateY(-8px) scale(1.01);
   border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* 1. Borde superior de cristal (opcional, para coherencia con el Banner) */
 .workContainer::before {
   content: "";
   position: absolute;
@@ -37,7 +39,6 @@
   pointer-events: none;
 }
 
-/* 2. EFECTO DE REFLEJO METÁLICO (Se activa al hacer hover) */
 .workContainer::after {
   content: "";
   position: absolute;
@@ -71,9 +72,8 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   position: relative;
-  z-index: 2; /* Asegura que la imagen esté debajo del brillo */
+  z-index: 2;
 }
 
 .workImage {
@@ -84,7 +84,7 @@
 }
 
 .workContainer:hover .workImage {
-  transform: scale(1.05); /* Zoom suave al entrar con el mouse */
+  transform: scale(1.05);
 }
 
 /* =========================
@@ -96,7 +96,6 @@
   font-family: "Inter", sans-serif;
   color: #ffffff;
   text-align: center;
-  position: relative;
   z-index: 3;
 }
 
@@ -109,21 +108,18 @@
   padding: 0.4rem 0.5rem;
   margin: 0;
   font-size: 0.7rem;
-  color: #9b9b9b; /* Color más suave para las etiquetas */
+  color: #9b9b9b;
   flex-grow: 1;
   width: 100%;
-  position: relative;
   z-index: 3;
 }
 
-/* Estilo para los items de la lista (tags) */
 .description li {
   background: rgba(255, 255, 255, 0.05);
   padding: 2px 8px;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 /* =========================
@@ -131,49 +127,37 @@
 ========================= */
 .workRepository {
   width: 100%;
-  padding: 1rem;
+  padding: 0.8rem; /* Más compacto */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  position: relative;
-  z-index: 5; /* Asegura que los botones sean clickeables */
+  gap: 8px;
+  z-index: 5;
 }
 
 .repositoryBtn {
-  padding: 0.5rem 1.2rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 20px;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
   border: none;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
-  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
   font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  transition: 0.3s;
 }
 
 .repositoryBtn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
-  background: linear-gradient(135deg, #60a5fa, #2563eb);
 }
 
 /* =========================
-   MEDIA QUERIES
+   RESPONSIVE
 ========================= */
-@media (min-width: 768px) {
-  .CardTitleH2 {
-    font-size: 1.2rem;
-  }
-}
-
 @media (max-width: 1024px) {
   .workContainer {
-    width: 100%; /* Deja que el grid de MyWorks defina el tamaño */
-    aspect-ratio: auto;
-    min-height: 400px;
+    aspect-ratio: 3 / 4;
   }
 }
