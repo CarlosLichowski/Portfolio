@@ -1,1 +1,1 @@
-I use i18next for lenguage management so i can change the state without all the code on my App.jsx
+Proyecto desarrollado utilizando Next.js para el frontend y optimizado mediante Claude Code, logrando un flujo de trabajo de IA-Augmented Development para la generación de tests unitarios y refactorización de lógica de servidor. I use i18next for lenguage management so i can change the state without all the code on my App.jsx. 
